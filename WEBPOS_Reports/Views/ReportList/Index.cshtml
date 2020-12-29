@@ -1,0 +1,264 @@
+﻿<style>
+    .marginTop50 {
+        margin-top: 50px;
+    }
+
+    span {
+        cursor: pointer;
+    }
+</style>
+
+<div ng-app="myApp" ng-controller="HomeCtrl" class="container">
+
+
+
+    <script>
+
+    var app = angular.module('myApp', []);
+    app.controller('HomeCtrl', function ($scope, $http) {
+
+
+        $scope.menuList = [{ value: '', option: '' }, { value: '1', option: 'Καθημερινές Λειτουργίες' }, { value: '2', option: 'Αρχείο Συστήματος' }, { value: '3', option: 'Πωλήσεις' }, { value: '4', option: 'Εκτυπώσεις Κλεισίματος' }, { value: '5', option: 'Simply Burgers' }];
+        $scope.subMenuList = [{ value: '', option: '' }, { value: '1', option: 'Best Seller' }, { value: '2', option: 'Ανά Δωμάτιο' }, { value: '3', option: 'Ανά Χειριστή' }, { value: '4', option: 'Ανά Τιμοκατάλογο' }, { value: '5', option: 'Ανά Κατηγορία' }, { value: '6', option: 'FLAT' }];
+
+
+
+        GetAllReport();
+
+
+        function GetAllReport() {
+            $http({
+                method: 'POST',
+                url: 'ReportList/GetAll'
+            }).then(function (response) {
+                //alert('2');
+                console.log(response);
+                $scope.reports = response.data.reports;
+                angular.forEach($scope.reports, function (obj) {
+                    obj["showEdit"] = true;
+                })
+
+            }, function (error) {
+                console.log("-------------");
+                console.log(error);
+                console.log("-------------");
+                alert('error');
+            });
+        }
+
+
+                   $scope.getMenuDescription = function (itemid) {
+
+                            for (i = 0; i < $scope.menuList.length; i++)
+                                if ($scope.menuList[i].value == itemid)
+                                    return $scope.menuList[i].option;
+
+                        return "(none)";
+
+                    }
+
+                   $scope.getSubMenuDescription = function (itemid) {
+
+                       for (i = 0; i < $scope.subMenuList.length; i++)
+                           if ($scope.subMenuList[i].value == itemid)
+                               return $scope.subMenuList[i].option;
+
+                       return "(none)";
+
+                   }
+
+                    $scope.toggleEdit = function (rep) {
+                        rep.showEdit = rep.showEdit ? false : true;
+                        //alert('toggleEdit');
+                    }
+
+                    $scope.UpdateReport = function (rep) {
+                        //alert(rep.Id);
+                        rep.Layout = "";
+                        //alert(rep.Layout);
+                        debugger;
+                        $http({
+                            method: 'POST',
+                            url: 'ReportList/UpdateReport',
+                            data: JSON.stringify(rep),
+                            //data: rep,
+                            dataType: "json"
+                        }).then(function (response) {
+                            debugger;
+                            $scope.toggleEdit(rep);
+                            console.log(response);
+                            //alert(response.data);
+                        }, function (error) {
+                            console.log(error);
+                            alert('update error');
+                        });
+                    }
+
+
+                    $scope.update = function (rep) {
+                        if (rep.Menu != '3') {
+                            rep.Submenu = '';
+                        }
+                    }
+
+
+                    $scope.CancelReport = function (rep) {
+                        $scope.toggleEdit(rep);
+                        GetAllReport();
+                    }
+
+
+                    $scope.designReport = function (report) {
+                        window.location.href = "/Designer/Design?url=" + report.Url;
+                    }
+
+                    $scope.deleteReport = function (report) {                        
+
+                        var r = confirm("Θέλετε να διαγράψετε την εγγραφή ;");
+                        if (!r) 
+                            return;
+                                                
+                        debugger;
+                        var getData = $scope.DeleteRep(report.Id, report.Url);
+                        getData.then(function (msg) {
+                            GetAllReport();
+                            alert('Report Deleted');
+                        }, function () {
+                            alert('Error in Deleting Record');
+                        });
+                    }
+                    $scope.DeleteRep = function (Id, Url) {
+                        var response = $http({
+                            method: "post",
+                            url: "ReportList/deleteReport",
+                            params: {
+                                Id: Id,
+                                Url: Url
+                            }
+                        });
+                        return response;
+                    }
+
+
+                    $scope.previewReport = function (report) {
+                        window.location.href = "/Designer/Preview?url=" + report.Url;
+                    }
+
+                    $scope.addReport = function () {
+                        window.location.href = "/Designer/New";
+                    }
+
+                    $scope.return = function () {
+                        window.location.href = "/Home/Index";
+                    }
+
+                    $scope.importReport = function () {
+                        window.location.href = "/ReportList/ShowUploadForm";
+                    }
+
+
+    });
+
+    </script>
+
+
+
+
+    <div class="row">
+
+
+        
+        <div class="bs-example marginTop50" data-example-id="table-within-panel">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3>Λίστα Εκτυπώσεων</h3>
+                </div>
+                <div class="panel-body">
+                    <label> Αναζήτηση: <input ng-model="searchText"></label>   &nbsp;&nbsp;&nbsp;&nbsp;                                     
+                    <span ng-click="return()" class="glyphicon glyphicon-arrow-left" title="Επιστροφή στο WebPOS Reports"></span>&nbsp;  
+                    <span ng-click="addReport()" class="glyphicon glyphicon-plus-sign" title="Προσθήκη εκτύπωσης"></span>&nbsp;  
+                    <span ng-click="importReport()" class="glyphicon glyphicon-import" title="Εισαγωγή εκτύπωσης απο αρχείο"></span>
+
+                    
+                    
+                    <p>
+                        @*Report List*@
+                    </p>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                #
+                            </th>
+                            @*<th>
+                                    Id
+                                </th>*@
+                            <th>
+                                Όνομα
+                            </th>
+                            <th>
+                                Μενού
+                            </th>
+                            <th>
+                                Υπομενού
+                            </th>
+
+                            <th>
+
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="report in reports | filter:searchText">
+                            <td scope="row">
+                                {{$index+1}}
+                            </td>
+                            @*<td>
+                                    <span ng-show="report.showEdit">{{report.Id}}</span>
+                                    <input ng-show="!report.showEdit" type="text" ng-model="report.Id" class="form-control">
+                                </td>*@
+                            <td>
+                                <span ng-show="report.showEdit">{{report.Url}}</span>
+                                <input ng-show="!report.showEdit" type="text" ng-model="report.Url" class="form-control">
+                            </td>
+
+                            <td>
+                                <span ng-show="report.showEdit">{{getMenuDescription(report.Menu)}}</span>
+                                <select ng-show="!report.showEdit" ng-model="report.Menu" class="form-control" ng-change="update(report)">
+                                    <option ng-repeat="item in menuList" value="{{item.value}}">
+                                        {{item.option}}
+                                    </option>
+                                </select>
+
+                            </td>
+                            <td>
+                                <span ng-show="report.showEdit">{{getSubMenuDescription(report.Submenu)}}</span>
+                                <select id="SelectSubmenu" ng-show="!report.showEdit" ng-model="report.Submenu" ng-disabled="report.Menu!='3'" class="form-control">
+                                    <option ng-repeat="item in subMenuList" value="{{item.value}}">
+                                        {{item.option}}
+                                    </option>
+                                </select>
+                            </td>
+
+                            <td>
+                                <span ng-show="report.showEdit" ng-click="toggleEdit(report)" class="glyphicon glyphicon-pencil" title="Διόρθωση εγγραφής"></span>
+                                <span ng-show="!report.showEdit" ng-click="UpdateReport(report)" class="glyphicon glyphicon-ok" title="Καταχώρηση εγγραφής"></span>
+                                <span ng-show="!report.showEdit" ng-click="CancelReport(report)" class="glyphicon glyphicon-ban-circle" title="Ακύρωση"></span>                                
+                                <span ng-show="report.showEdit" ng-click="designReport(report)" class="glyphicon glyphicon-cog" title="Σχεδίαση εκτύπωσης"></span>
+                                <span ng-show="report.showEdit" ng-click="previewReport(report)" class="glyphicon glyphicon-search" title="Προεπισκόπηση εκτύπωσης"></span>
+                                <span ng-show="report.showEdit" ng-click="deleteReport(report)" class="glyphicon glyphicon-remove" title="Διαγραφή εκτύπωσης"></span>&nbsp;&nbsp;                                
+                                <a ng-show="report.showEdit" href="/ReportList/DownLoadFile/{{report.Id}}">Download</a>                                 
+
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+</div>

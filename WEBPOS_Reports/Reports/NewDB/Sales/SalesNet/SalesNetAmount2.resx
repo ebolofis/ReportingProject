@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>-- select OBJECT_NAME(object_id),* from sys.columns where name='hotelid'
+-- select OBJECT_NAME(object_id),* from sys.columns where name='ItemCode'
+
+-----------------------------------------------------------------
+-------------------- Καθαρές Αξίες Πωλήσεων ---------------------
+-- (περιλαμβάνει υπολογισμό και αποφορολόγηση Δημοτικού Φόρου) --
+-----------------------------------------------------------------
+
+  /*
+ Declare @FromDate Date = '2016-10-08'
+       , @ToDate Date = '2016-10-10'
+       , @SelPlID Bigint = 0
+  */
+
+SELECT DepartmentId = prime.DepartmentId, prime.Department
+     , ProductCategoryCode
+     , ProductCategoryDescrtiption = ISNULL( prime.ProductCategoryDescrtiption, '' )
+     , ProductId, ProductCode = ISNULL( prime.ProductCode, '' ), ProductDescription
+     , CategoryId, CategoryDescription
+     , Price = MAX( Price )
+     , RetQTY = CASE WHEN IsVoided &lt;&gt; 0 THEN SUM( QTY ) ELSE 0 END
+     , RetTotal = CASE WHEN IsVoided &lt;&gt; 0 THEN SUM( Total ) ELSE 0 END
+     , RetNet = CASE WHEN IsVoided &lt;&gt; 0 THEN SUM( NetNoTax ) ELSE 0 END
+     , CoplQTY = CASE WHEN IsVoided = 0 AND InvoiceType = 4 THEN SUM( QTY ) ELSE 0 END
+     , CoplTotal = CASE WHEN IsVoided = 0 AND InvoiceType = 4 THEN SUM( Total ) ELSE 0 END
+     , CorplNet = CASE WHEN IsVoided = 0 AND InvoiceType = 4 THEN SUM( NetNoTax ) ELSE 0 END
+     , QTY = CASE WHEN IsVoided = 0 AND InvoiceType != 4 THEN SUM( QTY ) ELSE 0 END
+     , Total = CASE WHEN IsVoided = 0 AND InvoiceType != 4 THEN SUM( Total ) ELSE 0 END
+     , Net = CASE WHEN IsVoided = 0 AND InvoiceType != 4 THEN SUM( NetNoTax ) ELSE 0 END
+     , IsExtra
+     -- , NetNoTax = CASE WHEN IsVoided = 0 AND InvoiceType != 4 THEN SUM( NetNoTax ) ELSE 0 END
+
+FROM (
+
+SELECT ProductId, ProductCode, ProductDescription
+     , ProductCategoryCode, ProductCategoryDescrtiption
+     , CategoryId, CategoryDescription
+     -- , Net
+     , NetNoTax
+     , Qty
+     , Total
+     , t.IsVoided
+     , t.InvoiceType
+     , t.DepartmentId, t.Department     
+     , t.Price
+     , IsExtra
+
+FROM (
+
+SELECT DepartmentId = pi.DepartmentId, Department = d.[Description]
+     , ProductCode = MAX( Case IsExtra when 0 then p.Code else ing.Code end )
+     , ProductDescription = MAX( CASE IsExtra
+                                 WHEN 0 THEN p.SalesDescription
+                                 ELSE ing.SalesDescription END )
+     , ProductCategoryCode = pc.Code
+     , ProductCategoryDescrtiption = pc.Description
+     , ProductId = odi.ProductId
+     , CategoryId = IsNull( c.Id, 0 )
+     , CategoryDescription = IsNull( c.Description, 'No Category' )
+     , Qty = SUM( odi.Qty )
+     , Total = SUM( odi.Total )
+     -- , Net = SUM( odi.Net )
+     , NetNoTax = SUM( tax_calc.NetNoTax )
+     , InvoiceType = odi.InvoiceType
+     , IsVoided = ISNULL( i.IsVoided, 0 )
+     , Price = MAX( odi.Price )
+     , IsExtra
+
+FROM OrderDetailInvoices_View odi 
+     INNER JOIN Invoices_View i on odi.InvoicesId = i.id AND IsNull( i.IsDeleted, 0 ) = 0
+     LEFT OUTER JOIN ProductCategories pc on odi.productCategoryId = pc.Id
+     LEFT OUTER JOIN Categories c on pc.CategoryId = c.Id
+     INNER JOIN EndOfDay_View eod on i.EndofDayId = eod.Id
+                AND IsNull( CAST( CONVERT( VARCHAR( 10 ), eod.FODay, 120 ) AS DATETIME )
+                          , CAST( getdate() AS DATE ) ) BETWEEN @FromDate AND @ToDate
+     LEFT OUTER JOIN PosInfo pi on i.PosInfoId = pi.Id
+     LEFT OUTER JOIN Department d on pi.DepartmentId = d.Id
+     LEFT OUTER JOIN Product p on p.id = odi.productid and IsExtra = 0
+     LEFT OUTER JOIN Ingredients ing on ing.Id = odi.productid and IsExtra = 1
+     OUTER APPLY (
+                 SELECT TOP 1 NetNoTax = odi.Net * (100 - CASE
+                                                    WHEN odi.OrderDetailIgredientsId IS NOT NULL THEN ISNULL( pd_ing.TaxPercentage, 0 )
+                                                                                                 ELSE ISNULL( pd_a.TaxPercentage, 0 )
+                                                    END ) / 100
+                      , TaxPercentage = CASE
+                                        WHEN odi.OrderDetailIgredientsId IS NOT NULL THEN ISNULL( pd_ing.TaxPercentage, 0 )
+                                                                                     ELSE ISNULL( pd_a.TaxPercentage, 0 )
+                                        END
+                       --ISNULL(pd_a.TaxPercentage, pd_ing.TaxPercentage) TaxPercentage
+                     , odi.ProductId
+                     , odi.OrderDetailIgredientsId
+                     , odi.PricelistId
+                     , odi.Net
+                     , InvoiceId = odi.InvoicesId
+                     , Percentage = ( 100 - CASE
+                                            WHEN odi.OrderDetailIgredientsId IS NOT NULL THEN ISNULL( pd_ing.TaxPercentage, 0 )
+                                                                                         ELSE ISNULL( pd_a.TaxPercentage, 0 )
+                                            END )
+                     -- , *
+                 
+                 FROM OrderDetailInvoices_View AS odi2
+                      LEFT OUTER JOIN (
+                                      SELECT Id
+                                           , IngredientId
+                                      FROM OrderDetailIgredients_View
+                                      ) AS oding ON odi2.OrderDetailIgredientsId = oding.Id AND odi2.OrderDetailIgredientsId IS NOT NULL
+                      OUTER APPLY (
+                                  SELECT PricelistId = pd.PricelistId
+                                       , ProductId = pd.ProductId
+                                       , IngredientId = pd.IngredientId
+                                       , TaxPercentage = tx.Percentage
+                                  FROM PricelistDetail AS pd
+                                       LEFT OUTER JOIN Tax AS tx ON pd.TaxId = tx.Id
+                                  WHERE pd.PricelistId = odi2.PricelistId
+                                        AND CAST( pd.ProductId AS VARCHAR( 100 ) ) = CASE
+                                                                                     WHEN odi2.ProductId IS NULL THEN 'dfsdgfasd'
+                                                                                                                ELSE CAST(odi2.ProductId AS VARCHAR(100))
+                                                                                     END
+                                  ) AS pd_a
+                      OUTER APPLY (
+                                  SELECT PricelistId = pd.PricelistId
+                                       , ProductId = pd.ProductId
+                                       , IngredientId = pd.IngredientId
+                                       , TaxPercentage = tx.Percentage
+                                  FROM PricelistDetail AS pd
+                                       LEFT OUTER JOIN Tax AS tx ON pd.TaxId = tx.Id
+                                  WHERE pd.PricelistId = odi2.PricelistId
+                                        AND CAST( pd.IngredientId AS VARCHAR( 100 ) ) = CASE
+                                                                                        WHEN oding.IngredientId IS NULL THEN 'dfsdgfasd'
+                                                                                                                        ELSE CAST(oding.IngredientId AS VARCHAR(100))
+                                                                                        END
+                                  ) AS pd_ing
+                 
+                 WHERE odi2.InvoicesId = odi.InvoicesId AND odi.ProductId = odi2.ProductId
+                 ) AS tax_calc
+
+WHERE IsNull( odi.IsDeleted, 0 ) = 0
+      AND InvoiceType not in ( 2, 3, 8, 10, 11, 12 )
+
+GROUP BY pi.DepartmentId
+       , pc.Code
+       , pc.Description
+       , odi.ProductId
+       , odi.InvoiceType
+       , i.IsVoided
+       , d.[Description]
+       , IsNull( c.Id, 0 )
+       , IsNull( c.Description, 'No Category' )
+       , IsExtra
+
+) t
+
+) prime
+
+Where ( IsExtra = 1 AND Total &gt; 0 )
+      OR IsExtra = 0
+
+GROUP BY prime.Department
+       , prime.DepartmentId
+       , prime.ProductCategoryCode
+       , prime.ProductCategoryDescrtiption
+       , ProductCode
+       , ProductId
+       , ProductDescription
+       , prime.IsVoided
+       , prime.InvoiceType
+       , CategoryId
+       , CategoryDescription
+       , IsExtra</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkNhdGVnb3JpZXMiPjxGaWVsZCBOYW1lPSJJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IkNhdGVnb3J5RGVzY3JpcHRpb24iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iRGVwYXJ0bWVudHMiPjxGaWVsZCBOYW1lPSJJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IkRlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjxWaWV3IE5hbWU9IlByb2R1Y3RDYXRlZ29yaWVzIj48RmllbGQgTmFtZT0iQ29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEZXNjcmlwdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48VmlldyBOYW1lPSJRdWVyeSI+PEZpZWxkIE5hbWU9IkRlcGFydG1lbnRJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IkRlcGFydG1lbnQiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUHJvZHVjdENhdGVnb3J5Q29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQcm9kdWN0Q2F0ZWdvcnlEZXNjcnRpcHRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUHJvZHVjdElkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iUHJvZHVjdENvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUHJvZHVjdERlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNhdGVnb3J5SWQiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJDYXRlZ29yeURlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlByaWNlIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJSZXRRVFkiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iUmV0VG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlJldE5ldCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iQ29wbFFUWSIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJDb3BsVG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkNvcnBsTmV0IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJRVFkiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik5ldCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iSXNFeHRyYSIgVHlwZT0iQm9vbGVhbiIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iUXVlcnlfRmFzdFN0YXJ0Ij48RmllbGQgTmFtZT0iSWQiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJEZXNjcmlwdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJbnZvaWNlVHlwZUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iQ291bnRlciIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkRheSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IklzUHJpbnRlZCIgVHlwZT0iQm9vbGVhbiIgLz48RmllbGQgTmFtZT0iR3Vlc3RJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IlRvdGFsIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJEaXNjb3VudCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVmF0IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJUYXgiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik5ldCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iU3RhZmZJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IkNvdmVyIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFibGVJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IlBvc0luZm9JZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IlBkYU1vZHVsZUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iQ2xpZW50UG9zSWQiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJFbmRPZkRheUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iUG9zSW5mb0RldGFpbElkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iSXNWb2lkZWQiIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9IklzRGVsZXRlZCIgVHlwZT0iQm9vbGVhbiIgLz48RmllbGQgTmFtZT0iRGlzY291bnRSZW1hcmsiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUGF5bWVudHNEZXNjIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklzUGFpZCIgVHlwZT0iSW50MTYiIC8+PEZpZWxkIE5hbWU9IlBhaWRUb3RhbCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iUm9vbXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iT3JkZXJObyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJc0ludm9pY2VkIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJIYXNoY29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUYWJsZVN1bSIgVHlwZT0iRGVjaW1hbCIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
+  <metadata name="sqlDataSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <data name="customSqlQuery6.Sql" xml:space="preserve">
+    <value>SELECT prime.Department, prime.ProductCategoryDescrtiption, prime.ProductCode, prime.ProductDescription,
+	Max(Price) Price, 
+	CASE WHEN IsVoided &lt;&gt; 0 THEN SUM(QTY)ELSE 0 END RetQTY,
+	CASE WHEN IsVoided &lt;&gt; 0 THEN SUM(Total)ELSE 0 END RetTotal,
+	CASE WHEN IsVoided &lt;&gt; 0 THEN SUM(Net)ELSE 0 END RetNet,
+	CASE WHEN IsVoided = 0 AND InvoiceType = 4 THEN SUM(QTY)ELSE 0 END CoplQTY,
+	CASE WHEN IsVoided = 0 AND InvoiceType = 4 THEN SUM(Total)ELSE 0 END CoplTotal,
+	CASE WHEN IsVoided = 0 AND InvoiceType = 4 THEN SUM(Net)ELSE 0 END CorplNet, 
+	CASE WHEN IsVoided = 0 AND InvoiceType != 4 THEN SUM(QTY)ELSE 0 END QTY,
+	CASE WHEN IsVoided = 0 AND InvoiceType != 4 THEN SUM(Total)ELSE 0 END Total,
+	CASE WHEN IsVoided = 0 AND InvoiceType != 4 THEN SUM(Net)ELSE 0 END Net  
+FROM (
+	select 
+			DepartmentId = pi.DepartmentId,
+			Department = d.[Description],
+			ProductCode = pr.Code,
+			ProductDescription = pr.SalesDescription,
+			ProductCategoryCode = pc.Code,
+			ProductCategoryDescrtiption = pc.Description,
+			Qty = Sum(od.Qty),
+			Total = sum(od.TotalAfterDiscount),
+			Net = Sum(odva.Net),
+			InvoiceType = it.[Type],
+			IsVoided = ISNULL(i.IsVoided,0),
+			MAX(od.Price) Price
+	from OrderDetailInvoices odi
+	join Invoices i on i.Id = odi.InvoicesId
+	join InvoiceTypes it on it.Id = i.InvoiceTypeId
+	join PosInfo pi on pi.Id = i.PosInfoId
+	left outer join Department d on d.Id = pi.DepartmentId
+	join OrderDetail od on od.Id = odi.OrderDetailId
+	join Product pr on pr.Id = od.ProductId
+	join OrderDetailVatAnal odva on odi.OrderDetailId = odva.OrderDetailId
+	join Vat v on v.Id = odva.VatId
+	left outer join EndOfDay eod on eod.Id = i.EndOfDayId
+	left outer join ProductCategories pc on pc.Id = pr.ProductCategoryId
+	where  IsNull(eod.FODay, CAST(getdate() AS DATE)) between @FromDate and @ToDate 
+		   and IsNull(i.IsDeleted, 0) = 0 and IsNull(od.IsDeleted, 0) = 0 and it.Type not in (2,8)
+	GROUP BY PI.DepartmentId, d.[Description], pr.Code, pr.SalesDescription, pc.Code, pc.[Description], it.[Type], i.IsVoided
+	union all
+	select 
+			DepartmentId = pi.DepartmentId,
+			Department = d.[Description],
+			ProductCode = ing.Code,
+			ProductDescription = ing.SalesDescription,
+			ProductCategoryCode = pc.Code,
+			ProductCategoryDescrtiption = pc.Description,
+			Qty = Sum(oding.Qty),
+			Total = sum(oding.TotalAfterDiscount),
+			Net = Sum(odva.Net),
+			InvoiceType = it.[Type],
+			IsVoided = ISNULL(i.IsVoided,0),
+			MAX(oding.Price) Price
+	from OrderDetailInvoices odi
+	join OrderDetailIgredients oding on oding.OrderDetailId = odi.OrderDetailId
+	join Invoices i on i.Id = odi.InvoicesId
+	join InvoiceTypes it on it.Id = i.InvoiceTypeId
+	join PosInfo pi on pi.Id = i.PosInfoId
+	left outer join Department d on d.Id = pi.DepartmentId
+	join OrderDetail od on od.Id = odi.OrderDetailId
+	join Product pr on pr.Id = od.ProductId
+	join Ingredients ing on ing.Id = oding.IngredientId
+	join OrderDetailIgredientVatAnal odva on oding.Id = odva.OrderDetailIgredientsId
+	join Vat v on v.Id = odva.VatId
+	left outer join EndOfDay eod on eod.Id = i.EndOfDayId
+	left outer join ProductCategories pc on pc.Id = pr.ProductCategoryId
+	where  IsNull(eod.FODay, CAST(getdate() AS DATE)) between @FromDate and @ToDate 
+	GROUP BY PI.DepartmentId, d.[Description], ing.Code, ing.SalesDescription, pc.Code, pc.[Description], it.[Type], i.IsVoided
+) prime
+GROUP BY ProductCode, ProductDescription, prime.Department, prime.ProductCategoryDescrtiption, prime.IsVoided,
+	prime.InvoiceType</value>
+  </data>
+  <data name="customSqlQuery7.Sql" xml:space="preserve">
+    <value>SELECT CategoryId, Category,0 Price, 
+	CASE WHEN IsVoided &lt;&gt; 0 THEN SUM(QTY)ELSE 0 END RetQTY,
+	CASE WHEN IsVoided &lt;&gt; 0 THEN SUM(Total)ELSE 0 END RetTotal,
+	CASE WHEN IsVoided &lt;&gt; 0 THEN SUM(Net)ELSE 0 END RetNet,
+	CASE WHEN IsVoided = 0 AND InvoiceType = 4 THEN SUM(QTY)ELSE 0 END CoplQTY,
+	CASE WHEN IsVoided = 0 AND InvoiceType = 4 THEN SUM(Total)ELSE 0 END CoplTotal,
+	CASE WHEN IsVoided = 0 AND InvoiceType = 4 THEN SUM(Net)ELSE 0 END CorplNet, 
+	CASE WHEN IsVoided = 0 AND InvoiceType != 4 THEN SUM(QTY)ELSE 0 END QTY,
+	CASE WHEN IsVoided = 0 AND InvoiceType != 4 THEN SUM(Total)ELSE 0 END Total,
+	CASE WHEN IsVoided = 0 AND InvoiceType != 4 THEN SUM(Net)ELSE 0 END Net  
+FROM (
+	select 
+		CategoryId = ISNULL(c.Id,-1)
+		,Category = ISNULL(c.[Description],'No Category')
+		,Qty = Sum(od.Qty),
+		Total = sum(od.TotalAfterDiscount),
+		Net = Sum(odva.Net),
+		InvoiceType = it.[Type],
+		IsVoided = ISNULL(i.IsVoided,0),
+		0 Price
+	from OrderDetailInvoices odi
+	join Invoices i on i.Id = odi.InvoicesId
+	join InvoiceTypes it on it.Id = i.InvoiceTypeId
+	join PosInfo pi on pi.Id = i.PosInfoId
+	left outer join Department d on d.Id = pi.DepartmentId
+	join OrderDetail od on od.Id = odi.OrderDetailId
+	join Product pr on pr.Id = od.ProductId
+	join OrderDetailVatAnal odva on odi.OrderDetailId = odva.OrderDetailId
+	join Vat v on v.Id = odva.VatId
+	left outer join EndOfDay eod on eod.Id = i.EndOfDayId
+	left outer join ProductCategories pc on pc.Id = pr.ProductCategoryId
+	left outer join Categories c on pc.Categoryid = c.Id
+	where  IsNull(eod.FODay, CAST(getdate() AS DATE)) between @FromDate and @ToDate 
+		   and IsNull(i.IsDeleted, 0) = 0 and IsNull(od.IsDeleted, 0) = 0 and it.Type not in (2,8)
+	GROUP BY c.Id, c.[Description], it.[Type], i.IsVoided
+	union all
+	select 
+		CategoryId = ISNULL(c.Id,-1)
+		,Category = ISNULL(c.[Description],'No Category')
+		,Qty = Sum(oding.Qty),
+		Total = sum(oding.TotalAfterDiscount),
+		Net = Sum(odva.Net),
+		InvoiceType = it.[Type],
+		IsVoided = ISNULL(i.IsVoided,0),
+		0 Price
+	from OrderDetailInvoices odi
+	join OrderDetailIgredients oding on oding.OrderDetailId = odi.OrderDetailId
+	join Invoices i on i.Id = odi.InvoicesId
+	join InvoiceTypes it on it.Id = i.InvoiceTypeId
+	join PosInfo pi on pi.Id = i.PosInfoId
+	left outer join Department d on d.Id = pi.DepartmentId
+	join OrderDetail od on od.Id = odi.OrderDetailId
+	join Product pr on pr.Id = od.ProductId
+	join Ingredients ing on ing.Id = oding.IngredientId
+	join OrderDetailIgredientVatAnal odva on oding.Id = odva.OrderDetailIgredientsId
+	join Vat v on v.Id = odva.VatId
+	left outer join EndOfDay eod on eod.Id = i.EndOfDayId
+	left outer join ProductCategories pc on pc.Id = pr.ProductCategoryId
+	left outer join Categories c on pc.Categoryid = c.Id
+	where  IsNull(eod.FODay, CAST(getdate() AS DATE)) between @FromDate and @ToDate 
+	GROUP BY c.Id, c.[Description], it.[Type], i.IsVoided
+) prime
+GROUP BY CategoryId, Category, prime.IsVoided, prime.InvoiceType</value>
+  </data>
+  <data name="sqlDataSource2.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTIiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iRGVwYXJ0bWVudCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQcm9kdWN0Q2F0ZWdvcnlEZXNjcnRpcHRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUHJvZHVjdENvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUHJvZHVjdERlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlByaWNlIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJSZXRRVFkiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iUmV0VG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlJldE5ldCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iQ29wbFFUWSIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJDb3BsVG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkNvcnBsTmV0IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJRVFkiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik5ldCIgVHlwZT0iRGVjaW1hbCIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iU3VuUmVwUXVlcnkiPjxGaWVsZCBOYW1lPSJDYXRlZ29yeUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iQ2F0ZWdvcnkiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUHJpY2UiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJSZXRRVFkiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iUmV0VG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlJldE5ldCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iQ29wbFFUWSIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJDb3BsVG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IkNvcnBsTmV0IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJRVFkiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik5ldCIgVHlwZT0iRGVjaW1hbCIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
+</root>

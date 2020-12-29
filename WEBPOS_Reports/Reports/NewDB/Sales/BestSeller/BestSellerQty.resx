@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>-- declare  @FromDate date = '2016-04-01', @ToDate date = GetDate()
+
+SELECT ProductId, ProductCode, ProductDescription,
+       ProductCategoryCode, ProductCategoryDescrtiption,
+       CategoryDescription, CategoryId,
+       FODay,
+       InvoiceCount = Count(distinct InvoiceId),
+       Qty = Sum(Qty),
+       Total = Sum(Total),
+       MinPrice = Min(Price), 
+       MaxPrice = Max(Price),
+       Net = Sum(Net),
+       VatAmount = Sum(VatAmount),
+	 InvoiceType = prime.InvoiceType,
+	 PosInfoId
+FROM (
+     SELECT ProductId, ProductCode , ProductDescription, ProductCategoryCode,
+            ProductCategoryDescrtiption, CategoryDescription, CategoryId,
+            PricelistCode, InvoiceId, InvoiceTotal, Abbreviation, ReceiptNo, Cover, qty,
+            Total, Price, Net, VatAmount, FODay, IsExtra, InvoiceType, PosInfoId
+     FROM (
+          SELECT --PosInfoDescription = pi.Description,
+                 ProductId = odi.ProductId,
+                 ProductCode = max(Case IsExtra when 0 then p.Code else ing.Code end),
+                 ProductDescription = max(Case IsExtra when 0 then p.SalesDescription else ing.SalesDescription end),
+                 ProductCategoryCode = pc.CategoryId,
+                 ProductCategoryDescrtiption = pc.Description,
+                 CategoryDescription = c.Description,
+                 CategoryId = c.Id,
+                 Qty = Sum(odi.Qty),
+                 Price = Sum(odi.Price),
+                 Discount = Sum(odi.Discount),
+                 Total = sum(odi.Total),
+                 Net = Sum(odi.Net),
+                 VatAmount = Sum(odi.VatAmount),
+                 VatPercentage = Max(v.Percentage),
+                 --PricelistDescription = pl.Description,
+                 --PricelistId = pl.Id,
+                 PricelistCode = pl.Code,
+                 VatId = odi.VatId,
+                 InvoiceTotal = i.Total,
+                 Abbreviation = odi.Abbreviation,
+                 InvoiceType = odi.InvoiceType,
+                 PosInfoId = i.PosInfoId,
+                 ReceiptNo = odi.Counter,
+                 InvoiceId = i.Id,
+                 Cover = i.Cover,
+                 Rooms = i.Rooms,
+                 SalesTypeId = odi.SalesTypeId,
+                 SalesTypeDescription = st.Description,
+                 --StaffCode = s.Code,
+                 --StafName = s.LastName + ' ' + s.FirstName,
+                 TempFODay = IsNull(eod.FODay, CAST(getdate() AS DATE)),
+                 FODay = @FromDate,
+                 NotAudited = IsNull(i.EndOfDayId, 0),
+                 IsExtra = odi.IsExtra
+
+	      FROM OrderDetailInvoices_View odi 
+               INNER JOIN Invoices_View i on odi.InvoicesId = i.id AND ISNULL(i.IsVoided,0) = 0
+               left outer join Product p on p.id = odi.productid and isextra = 0
+               left join ProductCategories pc on  pc.Id = case odi.IsExtra when 1 then odi.productCategoryId else p.ProductCategoryId end
+               LEFT OUTER JOIN Categories c on pc.CategoryId = c.Id
+               LEFT OUTER JOIN EndOfDay_View eod on i.EndofDayId = eod.Id
+               LEFT OUTER JOIN Pricelist pl on odi.pricelistid = pl.id
+               LEFT OUTER JOIN vat v on odi.vatId = v.Id
+               LEFT OUTER JOIN SalesType st on st.Id = odi.SalesTypeId
+               LEFT OUTER JOIN Staff s on i.StaffId = s.id
+               LEFT OUTER JOIN PosInfo pi on i.PosInfoId = pi.Id
+               left outer join Ingredients ing on ing.Id = odi.productid and isextra = 1
+
+          WHERE IsNull(i.IsDeleted, 0) = 0 and
+		        IsNull(odi.IsDeleted, 0) = 0 and
+				InvoiceType not in (2,3,8) AND
+                IsNull(eod.FODay, CAST(getdate() AS DATE)) BETWEEN CAST(@FromDate AS DATE) AND CAST(@ToDate AS DATE)
+
+          group by i.Id, odi.ProductId, odi.Description, pc.CategoryId, pc.Description,
+                   c.Description, c.Id,
+                   pl.Code, odi.VatId, odi.Abbreviation,odi.Counter,
+			 i.Id, i.Cover, i.Total, i.Rooms,
+		       odi.SalesTypeId, st.Description, IsNull(eod.FODay, CAST(getdate() AS DATE)),
+			 IsNull(i.EndOfDayId, 0), IsExtra, InvoiceType, i.PosInfoId
+	) t
+
+) prime
+
+GROUP BY ProductId, ProductCode, ProductDescription,
+         ProductCategoryCode, ProductCategoryDescrtiption, 
+         CategoryDescription, CategoryId,
+         FODay, prime.InvoiceType, PosInfoId</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkNhdGVnb3JpZXNMb29rVXAiPjxGaWVsZCBOYW1lPSJJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IkRlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjxWaWV3IE5hbWU9Ikludm9pY2VUeXBlTG9va1VwIj48RmllbGQgTmFtZT0iSWQiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJBYmJyZXZpYXRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVHlwZSIgVHlwZT0iSW50MTYiIC8+PC9WaWV3PjxWaWV3IE5hbWU9IlBvc0luZm9Mb29rVXAiPjxGaWVsZCBOYW1lPSJJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IkRlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjxWaWV3IE5hbWU9IlByb2R1Y3RDYXRlZ29yaWVzTG9va1VwIj48RmllbGQgTmFtZT0iQ2F0ZWdvcnlJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IkRlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PC9WaWV3PjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iUHJvZHVjdElkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iUHJvZHVjdENvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUHJvZHVjdERlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlByb2R1Y3RDYXRlZ29yeUNvZGUiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJQcm9kdWN0Q2F0ZWdvcnlEZXNjcnRpcHRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2F0ZWdvcnlEZXNjcmlwdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDYXRlZ29yeUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iRk9EYXkiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJJbnZvaWNlQ291bnQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJRdHkiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1pblByaWNlIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNYXhQcmljZSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTmV0IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJWYXRBbW91bnQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ikludm9pY2VUeXBlIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUG9zSW5mb0lkIiBUeXBlPSJJbnQ2NCIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iUXVlcnlfRmFzdFN0YXJ0Ij48RmllbGQgTmFtZT0iSWQiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJEZXNjcmlwdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJbnZvaWNlVHlwZUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iQ291bnRlciIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkRheSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IklzUHJpbnRlZCIgVHlwZT0iQm9vbGVhbiIgLz48RmllbGQgTmFtZT0iR3Vlc3RJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IlRvdGFsIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJEaXNjb3VudCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVmF0IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJUYXgiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik5ldCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iU3RhZmZJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IkNvdmVyIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFibGVJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IlBvc0luZm9JZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IlBkYU1vZHVsZUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iQ2xpZW50UG9zSWQiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJFbmRPZkRheUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iUG9zSW5mb0RldGFpbElkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iSXNWb2lkZWQiIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9IklzRGVsZXRlZCIgVHlwZT0iQm9vbGVhbiIgLz48RmllbGQgTmFtZT0iRGlzY291bnRSZW1hcmsiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUGF5bWVudHNEZXNjIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklzUGFpZCIgVHlwZT0iSW50MTYiIC8+PEZpZWxkIE5hbWU9IlBhaWRUb3RhbCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iUm9vbXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iT3JkZXJObyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJc0ludm9pY2VkIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJIYXNoY29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUYWJsZVN1bSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iQ2FzaEFtb3VudCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJCdXp6ZXJOdW1iZXIiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
+  <metadata name="sqlDataSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 54</value>
+  </metadata>
+  <data name="customSqlQuery7.Sql" xml:space="preserve">
+    <value>--declare @FromDate datetime = '2016-11-01', @ToDate  datetime = '2016-11-30'
+
+SELECT ProductId, ProductCode, ProductDescription,
+       ProductCategoryCode, ProductCategoryDescrtiption,
+       CategoryDescription, CategoryId,
+       FODay,
+       InvoiceCount = Count(distinct InvoiceId),
+       Qty = Sum(Qty),
+       Total = Sum(Total),
+       MinPrice = Min(Price), 
+       MaxPrice = Max(Price),
+       Net = Sum(Net),
+       VatAmount = Sum(VatAmount),
+       InvoiceType = prime.InvoiceType,
+       DepartmentId = prime.DepartmentId,
+       PosInfoId
+	  -- ,TempFODay
+
+FROM (
+
+--Common section
+Select PosInfoId = i.PosInfoId
+     , PosInfoDescription = pi.Description
+     , DepartmentDescription = d.Description
+     , DepartmentId = pi.DepartmentId
+     , ProductId = pr.Id
+     , ProductCode = pr.Code
+     , ProductDescription = pr.SalesDescription
+     , ProductCategoryCode = pc.CategoryId
+     , ProductCategoryDescrtiption = pc.Description
+     , CategoryDescription = c.Description
+     , CategoryId = c.Id
+     , Qty = IsNull(od.Qty,0)
+     , Price = od.Price
+     , Discount = od.Discount
+     , Total = od.TotalAfterDiscount
+     , Net = odva.Net
+     , VatAmount = odva.VatAmount
+     , VatPercentage = v.Percentage
+     , PricelistDescription = pl.Description
+     , PricelistId = pl.Id
+     , PricelistCode = pl.Code
+     , VatId = odva.VatId
+     , InvoiceTotal = i.Total
+     , InvoiceType = it.Type
+     , Abbreviation = it.Abbreviation
+     , ReceiptNo = i.Counter
+     , InvoiceId = i.Id
+     , Cover = i.Cover
+     , Rooms = ''--i.Rooms
+     , SalesTypeId = od.SalesTypeId
+     , SalesTypeDescription = st.Description
+     , StaffCode = s.Code
+     , StafName = s.LastName + ' ' + s.FirstName
+     , TempFODay = IsNull(eod.FODay, CAST(getdate() AS DATE))
+     , FODay = @FromDate
+     , NotAudited = IsNull(i.EndOfDayId, 0)
+     , IsExtra = 0 
+
+From OrderDetailInvoices odi
+     join Invoices i on i.Id = odi.InvoicesId
+     join InvoiceTypes it on it.Id = i.InvoiceTypeId
+     join PosInfo pi on pi.Id = i.PosInfoId
+     left outer join Department d on d.Id = pi.DepartmentId
+     join OrderDetail od on od.Id = odi.OrderDetailId
+     join Product pr on pr.Id = od.ProductId
+     join OrderDetailVatAnal odva on odi.OrderDetailId = odva.OrderDetailId
+     join Vat v on v.Id = odva.VatId
+     left outer join EndOfDay eod on eod.Id = i.EndOfDayId
+     left outer join PricelistDetail pld on pld.Id = od.PriceListDetailId
+     left outer join Pricelist pl on pld.PricelistId = pl.Id
+     join Staff s on s.Id = i.StaffId
+     left outer join SalesType st on st.Id = od.SalesTypeId
+     left outer join ProductCategories pc on pc.Id = pr.ProductCategoryId
+     left outer join Categories c on pc.Categoryid = c.Id
+
+Where IsNull(eod.FODay, CAST(getdate() AS DATE)) between @FromDate and @ToDate 
+      and IsNull(i.IsDeleted, 0) = 0 and IsNull(od.IsDeleted, 0) = 0 and it.Type not in (2,8)
+
+Union all
+
+Select PosInfoId = i.PosInfoId
+     , PosInfoDescription = pi.Description
+     , DepartmentDescription = d.Description
+     , DepartmentId = pi.DepartmentId
+     , ProductId = ing.Id
+     , ProductCode = ing.Code
+     , ProductDescription = ing.SalesDescription
+     , ProductCategoryCode = pc.CategoryId
+     , ProductCategoryDescrtiption = pc.Description
+     , CategoryDescription = c.Description
+     , Categoryid = c.Id
+     , Qty = IsNull(oding.Qty,0)
+     , Price = oding.Price
+     , Discount = oding.Discount
+     , Total = oding.TotalAfterDiscount
+     , Net = odva.Net
+     , VatAmount = odva.VatAmount
+     , VatPercentage = v.Percentage
+     , PricelistDescription = pl.Description
+     , PricelistId = pl.Id
+     , PricelistCode = pl.Code
+     , VatId = odva.VatId
+     , InvoiceTotal = i.Total
+     , InvoiceType = it.Type
+     , Abbreviation = it.Abbreviation
+     , ReceiptNo = i.Counter
+     , InvoiceId = i.Id
+     , Cover = i.Cover
+     , Rooms = ''--i.Rooms
+     , SalesTypeId = od.SalesTypeId
+     , SalesTypeDescription = st.Description
+     , StaffCode = s.Code
+     , StafName = s.LastName + ' ' + s.FirstName
+     , TempFODay = IsNull(eod.FODay, CAST(getdate() AS DATE))
+     , FODay = @FromDate
+     , NotAudited = IsNull(i.EndOfDayId, 0)
+     , IsExtra = 1 
+
+From OrderDetailInvoices odi
+     join OrderDetailIgredients oding on oding.OrderDetailId = odi.OrderDetailId
+     join Invoices i on i.Id = odi.InvoicesId
+     join InvoiceTypes it on it.Id = i.InvoiceTypeId
+     join PosInfo pi on pi.Id = i.PosInfoId
+     left outer join Department d on d.Id = pi.DepartmentId
+     join OrderDetail od on od.Id = odi.OrderDetailId
+     join Product pr on pr.Id = od.ProductId
+     join Ingredients ing on ing.Id = oding.IngredientId
+     join OrderDetailIgredientVatAnal odva on oding.Id = odva.OrderDetailIgredientsId
+     join Vat v on v.Id = odva.VatId
+     left outer join EndOfDay eod on eod.Id = i.EndOfDayId
+     left outer join PricelistDetail pld on pld.Id = oding.PriceListDetailId
+     left outer join Pricelist pl on pld.PricelistId = pl.Id
+     join Staff s on s.Id = i.StaffId
+     left outer join SalesType st on st.Id = od.SalesTypeId
+     left outer join ProductCategories pc on pc.Id = pr.ProductCategoryId
+     left outer join Categories c on pc.Categoryid = c.Id
+
+where IsNull(eod.FODay, CAST(getdate() AS DATE)) between @FromDate and @ToDate 
+      -- and IsNull(i.IsDeleted, 0) = 0 and IsNull(oding.IsDeleted, 0) = 0 and it.Type not in (2,8)
+
+-- Common Section Ends
+
+) prime
+
+--WHERE ISNULL(prime.FODay, CAST(GETDATE() AS DATE)) BETWEEN CAST(@FromDate AS DATE) AND CAST(@ToDate AS DATE)
+--where IsExtra = 1
+GROUP BY ProductId, ProductCode, ProductDescription, ProductCategoryCode, ProductCategoryDescrtiption, 
+         CategoryDescription, CategoryId,
+         FODay, InvoiceType, DepartmentId, PosInfoId--, TempFODay
+
+Order by Qty desc</value>
+  </data>
+  <data name="sqlDataSource2.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTIiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iUHJvZHVjdElkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iUHJvZHVjdENvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUHJvZHVjdERlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlByb2R1Y3RDYXRlZ29yeUNvZGUiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJQcm9kdWN0Q2F0ZWdvcnlEZXNjcnRpcHRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iQ2F0ZWdvcnlEZXNjcmlwdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDYXRlZ29yeUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iRk9EYXkiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJJbnZvaWNlQ291bnQiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJRdHkiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik1pblByaWNlIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJNYXhQcmljZSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iTmV0IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJWYXRBbW91bnQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ikludm9pY2VUeXBlIiBUeXBlPSJJbnQxNiIgLz48RmllbGQgTmFtZT0iRGVwYXJ0bWVudElkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iUG9zSW5mb0lkIiBUeXBlPSJJbnQ2NCIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
+</root>

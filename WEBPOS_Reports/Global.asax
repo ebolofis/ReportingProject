@@ -1,0 +1,1 @@
+<%@ Application Codebehind="Global.asax.cs" Inherits="WEBPOS_Reports.MvcApplication" Language="C#" %>

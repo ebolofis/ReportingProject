@@ -1,0 +1,53 @@
+﻿
+<!DOCTYPE html>
+
+
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>@ViewBag.Title</title>
+
+	
+
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Content/Angular/Module.js"></script>
+    
+    
+    <script src="~/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+        
+    @*<script src="~/Content/Angular/Service.js"></script>
+    <script src="~/Content/Angular/Controller.js"></script>*@
+
+    @*@Styles.Render("~/Content/css")*@
+    
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+    <style>
+    </style>
+
+    
+
+
+
+</head>
+<body>
+   
+    @RenderBody()
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
+

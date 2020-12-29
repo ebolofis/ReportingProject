@@ -1,0 +1,1 @@
+SELECT Distinct CONVERT( VARCHAR(2), day, 108 ) HourOfDay FROM Invoices Order By HourOfDay Asc

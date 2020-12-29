@@ -1,0 +1,50 @@
+﻿@model DXWebApplication_ReportDesigner.Models.DesignModel
+
+@{
+    ViewBag.Title = "Design";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/Designer.css" />
+<script type="text/javascript">
+    function reportDesigner_ExitDesigner(s, e) {
+        window.location = '@Url.Action("Index")';
+    }
+</script>
+
+
+@*<script type="text/javascript">
+    function OnInit(s, e) {
+        var designerModel = s.designerModel;
+        designerModel.reportPreviewModel.reportPreview.previewVisible(true);
+        designerModel.reportPreviewModel.reportPreview.initialize(DevExpress.Designer.Report.ReportPreviewService.initializePreview(designerModel.model()));
+    }
+</script>*@
+
+
+@{
+    var designer = Html.DevExpress().ReportDesigner(settings =>
+    {
+        settings.Name = "reportDesigner";
+
+        //settings.Height = Unit.Percentage(100);
+        settings.ControlStyle.CssClass = "fullscreen";
+
+        if (Model.DataSource != null)
+        {
+            settings.DataSources.Add("Tables, Views", Model.DataSource);            
+        }
+
+        //settings.ClientSideEvents.Init = "OnInit";
+        settings.ClientSideEvents.ExitDesigner = "reportDesigner_ExitDesigner";
+    });
+
+    if (Model.Url != null)
+    {
+        designer.BindToUrl(Model.Url).GetHtml();
+    }
+    else
+    {
+        designer.Bind(new XtraReport()).GetHtml();
+
+    }
+}

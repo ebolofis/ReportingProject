@@ -1,0 +1,1 @@
+Select Id, Description From Pricelist

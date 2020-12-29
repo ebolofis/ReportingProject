@@ -1,0 +1,23 @@
+@{
+   ViewBag.Title = "Home Page";
+}
+
+@model DevExpress.XtraReports.UI.XtraReport
+@Html.DevExpress().WebDocumentViewer( settings =>
+{
+    settings.Name = "documentViewer";
+    settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+} ).Bind( Model ).GetHtml()
+
+
+@*<ul class="dropdown-menu" data-bind="foreach: Items">
+        <li><a href="#" data-bind="text: $data.MenuItemDescription, click: function () { location.href = $data.Url }"><span class="caret"></span></a></li>
+                                    <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+    </ul>*@
+
+<!DOCTYPE html>

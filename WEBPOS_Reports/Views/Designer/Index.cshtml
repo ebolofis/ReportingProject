@@ -1,0 +1,76 @@
+﻿@model WEBPOS_Reports.Models.IndexModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/Index.css" />
+
+<h2>Report Catalog</h2>
+
+@using (Html.BeginForm())
+{
+    <span>Please, press New, Edit, Preview or Delete !</span>
+    @Html.DevExpress().ListBoxFor(x => x.SelectedReportUrl, settings =>
+{
+    settings.Name = "Url";
+
+    settings.Properties.TextField = "Url";
+    settings.Properties.ValueField = "Url";
+    settings.Properties.ValueType = typeof(string);
+
+    settings.ControlStyle.CssClass = "reports";
+    settings.Width = 600;
+    //Model.Reports.Add(new DXWebApplication_ReportDesigner.Models.ReportModel { Url = "Test Report"});
+
+}).BindList(Model.Reports).GetHtml()
+
+
+    @Html.DevExpress().Button(settings =>
+{
+    settings.Name = "NewReportButton";
+    settings.RouteValues = new { Controller = "Designer", Action = "New" };
+    settings.UseSubmitBehavior = true;
+
+    settings.Text = "New";
+    settings.ControlStyle.CssClass = "buttonSeparator";
+    settings.Width = 100;
+}).GetHtml()
+
+
+    @Html.DevExpress().Button(settings =>
+{
+    settings.Name = "EditReportButton";
+    settings.RouteValues = new { Controller = "Designer", Action = "Design" };
+    settings.UseSubmitBehavior = true;
+
+    settings.Text = "Edit";
+    settings.ControlStyle.CssClass = "buttonSeparator";
+    settings.Width = 100;
+}).GetHtml()
+
+    @Html.DevExpress().Button(settings =>
+{
+    settings.Name = "DeleteReportButton";
+    settings.RouteValues = new { Controller = "Designer", Action = "Delete" };
+    settings.UseSubmitBehavior = true;
+
+    settings.Text = "Delete";
+    settings.Width = 100;
+}).GetHtml()
+
+
+    @Html.DevExpress().Button(settings =>
+{
+    settings.Name = "PreviewReportButton";
+    settings.RouteValues = new { Controller = "Designer", Action = "Preview" };
+    settings.UseSubmitBehavior = true;
+
+    settings.Text = "Preview";
+    settings.ControlStyle.CssClass = "buttonSeparator";
+    settings.Width = 100;
+}).GetHtml()
+
+}
+
+

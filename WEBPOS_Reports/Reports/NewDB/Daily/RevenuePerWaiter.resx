@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select * from(
+select  Abbreviation = a.Abbreviation,
+                a.Counter,
+                Day = a.Day,
+                AccountId = t.AccountId,
+                AccountType = t.AccountType,
+                AccountDescription = t.AccountDescription,
+                DepartmentId = a.DepartmentId ,
+                DepartmentDescription = a.DepartmentDescription,
+                PosInfoId = a.PosInfoId,
+                PosInfoCode = a.PosInfoCode,
+                PosInfoDescription = a.PosInfoDescription,
+                TableCode = a.TableCode,
+                Room = a.Room,
+                InvoiceType = a.InvoiceType,
+                vat1 = case InvoiceTotal when 0 then odiv.Vat1 else  odiv.Vat1 * (t.TransAmount / a.InvoiceTotal) end,
+                vat2 = case InvoiceTotal when 0 then odiv.Vat2 else  odiv.Vat2 * (t.TransAmount / a.InvoiceTotal) end,
+                vat3 = case InvoiceTotal when 0 then odiv.Vat3 else  odiv.Vat3 * (t.TransAmount / a.InvoiceTotal) end,
+                vat4 = case InvoiceTotal when 0 then odiv.Vat4 else  odiv.Vat4 * (t.TransAmount / a.InvoiceTotal) end,
+                vat5 = case InvoiceTotal when 0 then odiv.Vat5 else  odiv.Vat5 * (t.TransAmount / a.InvoiceTotal) end,
+                Vat1Pst = odiv.Vat1Pst,
+                Vat2Pst = odiv.Vat2Pst,
+                Vat3Pst = odiv.Vat3Pst,
+                Vat4Pst = odiv.Vat4Pst,
+                Vat5Pst = odiv.Vat5Pst,
+                TransAmount = t.TransAmount,
+                InvoiceTotal = a.InvoiceTotal,
+                InvoiceDiscount = a.InvoiceDiscount,
+                InvoiceDiscountRemark = a.InvoiceDiscountRemark,
+                IsVoided = a.IsVoided,
+                IsPaid = a.IsPaid,
+                StaffCode = a.StaffCode,
+                StafName = a.StafName,
+                FODay = a.FODay,
+                NotAudited = a.NotAudited from (
+select distinct Id = i.Id,
+                Abbreviation = odi.Abbreviation,
+                i.Counter,
+                Day = i.Day,
+              
+                DepartmentId = cast (d.Id as bigint),
+                DepartmentDescription = d.Description,
+                PosInfoId = i.PosInfoId,
+                PosInfoCode = pi.Code,
+                PosInfoDescription = pi.Description,
+                TableCode = odi.TableCode,
+                Room = i.Rooms,
+                InvoiceType = odi.InvoiceType,
+               
+                InvoiceTotal = i.Total,
+                InvoiceDiscount = i.Discount,
+                InvoiceDiscountRemark = i.DiscountRemark,
+                IsVoided = i.IsVoided,
+                IsPaid = i.IsPaid,
+                StaffCode = st.Code,
+                StafName = st.LastName + ' ' + st.FirstName,
+                FODay = CAST(IsNull(eod.FODay, getdate()) AS DATE),
+                NotAudited = IsNull(i.EndOfDayId, 0)
+ from Invoices_View i
+      join OrderDetailInvoices_View odi on i.id = odi.InvoicesId and odi.InvoiceType != 3 and odi.InvoiceType != 8
+      join staff st on st.Id = i.StaffId
+      join PosInfo pi on i.PosInfoId = pi.id
+      left outer join Department d on pi.DepartmentId = d.Id
+      left outer join EndOfDay_View eod on i.EndOfDayId = eod.Id
+                     -- and IsNull(eod.FODay, cast(getdate() AS DATE))  &gt;= cast(@FromFODay AS DATE)
+                     -- and IsNull(eod.FODay, cast(getdate() AS DATE))  &lt;= cast(@ToFODay  AS DATE)
+) a 
+inner join ( Select InvoicesId,
+                          Vat1 = Sum(vat1), 
+                          Vat2 = Sum(vat2), 
+                          Vat3 = Sum(vat3), 
+                          Vat4 = Sum(vat4), 
+                          Vat5 = Sum(vat5),
+                          Vat1Pst = max(Vat1Pst),
+                          Vat2Pst = max(Vat2Pst),
+                          Vat3Pst = max(Vat3Pst),
+                          Vat4Pst = max(Vat4Pst),
+                          Vat5Pst = max(Vat5Pst)
+                   from ( select  InvoicesId, 
+                                  Vat1= case vatCode when 1 then Total else 0 end,
+                                  Vat2= case vatCode when 2 then Total else 0 end,
+                                  Vat3= case vatCode when 3 then Total else 0 end,
+                                  Vat4= case vatCode when 4 then Total else 0 end,
+                                  Vat5= case vatCode when 5 then Total else 0 end,
+                                  Vat1Pst= case vatCode when 1 THEN v.Percentage else 0 end,
+                                  Vat2Pst= case vatCode when 2 then v.Percentage else 0 end,
+                                  Vat3Pst= case vatCode when 3 then v.Percentage else 0 end,
+                                  Vat4Pst= case vatCode when 4 then v.Percentage else 0 end,
+                                  Vat5Pst= case vatCode when 5 then v.Percentage else 0 end
+                          from OrderDetailInvoices_View
+                               LEFT OUTER JOIN Vat v ON v.Id = VatCode
+                          where IsNull(isDeleted, 0) != 1 ) a group by InvoicesId ) as odiv on odiv.InvoicesId = a.Id
+      inner join ( Select InvoicesId,
+                          AccountId,
+                          AccountType = a.Type,
+                          AccountDescription = a.Description,
+                          TransAmount = Sum( Amount )
+                   from Transactions_View t
+                        left outer join Accounts a on t.AccountId = a.Id
+                   where IsNull( t.isDeleted, 0 ) != 1
+                   group by InvoicesId, AccountId, a.Type, a.Description ) as t on t.InvoicesId = a.Id
+
+)  aa
+where IsNull(aa.FODay, cast(getdate() AS DATE))  &gt;= cast(@FromFODay AS DATE)
+                   and IsNull(aa.FODay, cast(getdate() AS DATE))  &lt;= cast(@ToFODay  AS DATE)</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkFjY291bnRzTG9va3VwcyI+PEZpZWxkIE5hbWU9IklkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iRGVzY3JpcHRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVHlwZSIgVHlwZT0iSW50MTYiIC8+PC9WaWV3PjxWaWV3IE5hbWU9IkRlcGFydG1lbnRzTG9va1VwcyI+PEZpZWxkIE5hbWU9IklkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iRGVzY3JpcHRpb24iIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iSW52b2ljZVR5cGVzTG9va1VwcyI+PEZpZWxkIE5hbWU9IklkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iVHlwZSIgVHlwZT0iSW50MTYiIC8+PEZpZWxkIE5hbWU9IkFiYnJldmlhdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48VmlldyBOYW1lPSJQb3NJbmZvTG9va1VwcyI+PEZpZWxkIE5hbWU9IklkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iQ29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEZXNjcmlwdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48VmlldyBOYW1lPSJRdWVyeSI+PEZpZWxkIE5hbWU9IkFiYnJldmlhdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJDb3VudGVyIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iRGF5IiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iQWNjb3VudElkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iQWNjb3VudFR5cGUiIFR5cGU9IkludDE2IiAvPjxGaWVsZCBOYW1lPSJBY2NvdW50RGVzY3JpcHRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRGVwYXJ0bWVudElkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iRGVwYXJ0bWVudERlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlBvc0luZm9JZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IlBvc0luZm9Db2RlIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlBvc0luZm9EZXNjcmlwdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUYWJsZUNvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUm9vbSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJbnZvaWNlVHlwZSIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9InZhdDEiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9InZhdDIiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9InZhdDMiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9InZhdDQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9InZhdDUiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlZhdDFQc3QiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlZhdDJQc3QiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlZhdDNQc3QiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlZhdDRQc3QiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlZhdDVQc3QiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9IlRyYW5zQW1vdW50IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJJbnZvaWNlVG90YWwiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ikludm9pY2VEaXNjb3VudCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iSW52b2ljZURpc2NvdW50UmVtYXJrIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklzVm9pZGVkIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJJc1BhaWQiIFR5cGU9IkludDE2IiAvPjxGaWVsZCBOYW1lPSJTdGFmZkNvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iU3RhZk5hbWUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRk9EYXkiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJOb3RBdWRpdGVkIiBUeXBlPSJJbnQ2NCIgLz48L1ZpZXc+PFZpZXcgTmFtZT0iUXVlcnlfRmFzdFN0YXJ0Ij48RmllbGQgTmFtZT0iSWQiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJEZXNjcmlwdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJbnZvaWNlVHlwZUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iQ291bnRlciIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IkRheSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9IklzUHJpbnRlZCIgVHlwZT0iQm9vbGVhbiIgLz48RmllbGQgTmFtZT0iR3Vlc3RJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IlRvdGFsIiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJEaXNjb3VudCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVmF0IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJUYXgiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ik5ldCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iU3RhZmZJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IkNvdmVyIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVGFibGVJZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IlBvc0luZm9JZCIgVHlwZT0iSW50NjQiIC8+PEZpZWxkIE5hbWU9IlBkYU1vZHVsZUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iQ2xpZW50UG9zSWQiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJFbmRPZkRheUlkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iUG9zSW5mb0RldGFpbElkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iSXNWb2lkZWQiIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9IklzRGVsZXRlZCIgVHlwZT0iQm9vbGVhbiIgLz48RmllbGQgTmFtZT0iRGlzY291bnRSZW1hcmsiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUGF5bWVudHNEZXNjIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IklzUGFpZCIgVHlwZT0iSW50MTYiIC8+PEZpZWxkIE5hbWU9IlBhaWRUb3RhbCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iUm9vbXMiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iT3JkZXJObyIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJJc0ludm9pY2VkIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJIYXNoY29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJUYWJsZVN1bSIgVHlwZT0iRGVjaW1hbCIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
+  <metadata name="sqlDataSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 54</value>
+  </metadata>
+  <data name="customSqlQuery7.Sql" xml:space="preserve">
+    <value>-- declare @FromFODay datetime = '2016-05-31', @ToFODay  datetime = '2016-05-31'
+
+select * from(
+select Abbreviation = a.Abbreviation,
+    a.Counter,
+    Day = a.Day,
+    AccountId = t.AccountId,
+    AccountType = t.AccountType,
+    AccountDescription = t.AccountDescription,
+    DepartmentId = a.DepartmentId ,
+    DepartmentDescription = a.DepartmentDescription,
+    PosInfoId = a.PosInfoId,
+    PosInfoCode = a.PosInfoCode,
+    PosInfoDescription = a.PosInfoDescription,
+    TableCode = a.TableCode,
+    Room = a.Room,
+    InvoiceType = a.InvoiceType,
+    vat1 = case InvoiceTotal when 0 then odiv.Vat1 else  odiv.Vat1 * (t.TransAmount / a.InvoiceTotal) end,
+    vat2 = case InvoiceTotal when 0 then odiv.Vat2 else  odiv.Vat2 * (t.TransAmount / a.InvoiceTotal) end,
+    vat3 = case InvoiceTotal when 0 then odiv.Vat3 else  odiv.Vat3 * (t.TransAmount / a.InvoiceTotal) end,
+    vat4 = case InvoiceTotal when 0 then odiv.Vat4 else  odiv.Vat4 * (t.TransAmount / a.InvoiceTotal) end,
+    vat5 = case InvoiceTotal when 0 then odiv.Vat5 else  odiv.Vat5 * (t.TransAmount / a.InvoiceTotal) end,
+    Vat1Pst = odiv.Vat1Pst,
+    Vat2Pst = odiv.Vat2Pst,
+    Vat3Pst = odiv.Vat3Pst,
+    Vat4Pst = odiv.Vat4Pst,
+    Vat5Pst = odiv.Vat5Pst,
+    TransAmount = t.TransAmount,
+    InvoiceTotal = a.InvoiceTotal,
+    InvoiceDiscount = a.InvoiceDiscount,
+    InvoiceDiscountRemark = a.InvoiceDiscountRemark,
+    IsVoided = a.IsVoided,
+    IsPaid = a.IsPaid,
+    StaffCode = a.StaffCode,
+    StafName = a.StafName,
+    FODay = a.FODay,
+    NotAudited = a.NotAudited from (
+
+  select distinct Id = i.Id,
+          IsDeleted = i.isDeleted,
+          Abbreviation = it.Abbreviation,
+          i.Counter,
+          Day = i.Day,
+          DepartmentId = cast (d.Id as bigint),
+          DepartmentDescription = d.Description,
+          PosInfoId = i.PosInfoId,
+          PosInfoCode = pi.Code,
+          PosInfoDescription = pi.Description,
+          TableCode = odi.TableCode,
+          Room = i.Rooms,
+          InvoiceType = it.Type,
+               
+          InvoiceTotal = i.Total,
+          InvoiceDiscount = i.Discount,
+          InvoiceDiscountRemark = i.DiscountRemark,
+          IsVoided = i.IsVoided,
+          IsPaid = i.IsPaid,
+          StaffCode = st.Code,
+          StafName = st.LastName + ' ' + st.FirstName,
+          FODay = CAST(IsNull(eod.FODay, getdate()) AS DATE),
+          NotAudited = IsNull(i.EndOfDayId, 0)
+  from Invoices i
+      join OrderDetailInvoices odi on i.id = odi.InvoicesId 
+      join InvoiceTypes it on i.InvoiceTypeId = it.Id and it.Type != 3 and it.Type != 8
+      join staff st on st.Id = i.StaffId
+      join PosInfo pi on i.PosInfoId = pi.id
+      left outer join Department d on pi.DepartmentId = d.Id
+      left outer join EndOfDay eod on i.EndOfDayId = eod.Id  
+      where IsNull(i.IsDeleted, 0) = 0 
+
+  ) a 
+  inner join (
+  
+    Select 
+      InvoicesId,
+      Vat1 = Sum(vat1), 
+      Vat2 = Sum(vat2), 
+      Vat3 = Sum(vat3), 
+      Vat4 = Sum(vat4), 
+      Vat5 = Sum(vat5),
+      Vat1Pst = max(Vat1Pst),
+      Vat2Pst = max(Vat2Pst),
+      Vat3Pst = max(Vat3Pst),
+      Vat4Pst = max(Vat4Pst),
+      Vat5Pst = max(Vat5Pst)
+    from ( 
+        select  InvoicesId, 
+            Vat1= case v.Code when 1 then od.TotalAfterDiscount else 0 end,
+            Vat2= case v.Code when 2 then od.TotalAfterDiscount else 0 end,
+            Vat3= case v.Code when 3 then od.TotalAfterDiscount else 0 end,
+            Vat4= case v.Code when 4 then od.TotalAfterDiscount else 0 end,
+            Vat5= case v.Code when 5 then od.TotalAfterDiscount else 0 end,
+            Vat1Pst= case v.Code when 1 THEN v.Percentage else 0 end,
+            Vat2Pst= case v.Code when 2 then v.Percentage else 0 end,
+            Vat3Pst= case v.Code when 3 then v.Percentage else 0 end,
+            Vat4Pst= case v.Code when 4 then v.Percentage else 0 end,
+            Vat5Pst= case v.Code when 5 then v.Percentage else 0 end
+        from OrderDetailInvoices odi
+        LEFT OUTER Join OrderDetail od ON od.Id = odi.OrderDetailId
+        LEFT OUTER JOIN OrderDetailVatAnal odva on od.Id = odva.OrderDetailId
+        LEFT OUTER JOIN Vat v ON v.Id = odva.VatId
+        where IsNull(odi.IsDeleted, 0) != 1 
+        union
+        select  InvoicesId, 
+            Vat1= case v.Code when 1 then od.TotalAfterDiscount else 0 end,
+            Vat2= case v.Code when 2 then od.TotalAfterDiscount else 0 end,
+            Vat3= case v.Code when 3 then od.TotalAfterDiscount else 0 end,
+            Vat4= case v.Code when 4 then od.TotalAfterDiscount else 0 end,
+            Vat5= case v.Code when 5 then od.TotalAfterDiscount else 0 end,
+            Vat1Pst= case v.Code when 1 THEN v.Percentage else 0 end,
+            Vat2Pst= case v.Code when 2 then v.Percentage else 0 end,
+            Vat3Pst= case v.Code when 3 then v.Percentage else 0 end,
+            Vat4Pst= case v.Code when 4 then v.Percentage else 0 end,
+            Vat5Pst= case v.Code when 5 then v.Percentage else 0 end
+        from OrderDetailInvoices odi
+        LEFT OUTER Join OrderDetailIgredients od ON od.Id = odi.OrderDetailId
+        LEFT OUTER JOIN OrderDetailIgredientVatAnal odva on od.Id = odva.OrderDetailIgredientsId
+        LEFT OUTER JOIN Vat v ON v.Id = odva.VatId
+        where IsNull(odi.IsDeleted, 0) != 1 
+        ) nested group by InvoicesId  
+
+     ) as odiv on odiv.InvoicesId = a.Id
+   inner join ( Select InvoicesId,
+                AccountId,
+                AccountType = a.Type,
+                AccountDescription = a.Description,
+                TransAmount = Sum( Amount )
+             from Transactions t
+              left outer join Accounts a on t.AccountId = a.Id
+             where IsNull( t.isDeleted, 0 ) != 1
+             group by InvoicesId, AccountId, a.Type, a.Description ) as t on t.InvoicesId = a.Id
+) aa
+where IsNull(aa.FODay, cast(getdate() AS DATE))  &gt;= cast(@FromFODay AS DATE)
+  and IsNull(aa.FODay, cast(getdate() AS DATE))  &lt;= cast(@ToFODay  AS DATE)
+
+--and posinfoid = 2
+
+--Select * from PosInfo
+</value>
+  </data>
+  <data name="sqlDataSource2.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTIiPjxWaWV3IE5hbWU9IlF1ZXJ5Ij48RmllbGQgTmFtZT0iQWJicmV2aWF0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IkNvdW50ZXIiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJEYXkiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJBY2NvdW50SWQiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJBY2NvdW50VHlwZSIgVHlwZT0iSW50MTYiIC8+PEZpZWxkIE5hbWU9IkFjY291bnREZXNjcmlwdGlvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEZXBhcnRtZW50SWQiIFR5cGU9IkludDY0IiAvPjxGaWVsZCBOYW1lPSJEZXBhcnRtZW50RGVzY3JpcHRpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUG9zSW5mb0lkIiBUeXBlPSJJbnQ2NCIgLz48RmllbGQgTmFtZT0iUG9zSW5mb0NvZGUiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iUG9zSW5mb0Rlc2NyaXB0aW9uIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlRhYmxlQ29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJSb29tIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9Ikludm9pY2VUeXBlIiBUeXBlPSJJbnQxNiIgLz48RmllbGQgTmFtZT0idmF0MSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0idmF0MiIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0idmF0MyIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0idmF0NCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0idmF0NSIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVmF0MVBzdCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVmF0MlBzdCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVmF0M1BzdCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVmF0NFBzdCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVmF0NVBzdCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iVHJhbnNBbW91bnQiIFR5cGU9IkRlY2ltYWwiIC8+PEZpZWxkIE5hbWU9Ikludm9pY2VUb3RhbCIgVHlwZT0iRGVjaW1hbCIgLz48RmllbGQgTmFtZT0iSW52b2ljZURpc2NvdW50IiBUeXBlPSJEZWNpbWFsIiAvPjxGaWVsZCBOYW1lPSJJbnZvaWNlRGlzY291bnRSZW1hcmsiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iSXNWb2lkZWQiIFR5cGU9IkJvb2xlYW4iIC8+PEZpZWxkIE5hbWU9IklzUGFpZCIgVHlwZT0iSW50MTYiIC8+PEZpZWxkIE5hbWU9IlN0YWZmQ29kZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJTdGFmTmFtZSIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJGT0RheSIgVHlwZT0iRGF0ZVRpbWUiIC8+PEZpZWxkIE5hbWU9Ik5vdEF1ZGl0ZWQiIFR5cGU9IkludDY0IiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
+  </data>
+</root>

@@ -1,0 +1,1 @@
+Select Id, Code, Description From PosInfo

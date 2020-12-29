@@ -1,0 +1,413 @@
+﻿@using WEBPOS_Reports.Models
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Web POS Reports - @ViewBag.ReportTitle</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+    @Html.DevExpress().GetStyleSheets(
+    new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+    //new StyleSheet { ExtensionSuite = ExtensionSuite.Editors },
+    //new StyleSheet { ExtensionSuite = ExtensionSuite.HtmlEditor },
+    //new StyleSheet { ExtensionSuite = ExtensionSuite.GridView },
+    //new StyleSheet { ExtensionSuite = ExtensionSuite.CardView },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.PivotGrid },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Chart },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Report },
+    //new StyleSheet { ExtensionSuite = ExtensionSuite.Scheduler },
+    //new StyleSheet { ExtensionSuite = ExtensionSuite.TreeList },
+    //new StyleSheet { ExtensionSuite = ExtensionSuite.RichEdit },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Spreadsheet },
+    //new StyleSheet { ExtensionSuite = ExtensionSuite.SpellChecker },
+    new StyleSheet { ExtensionType = ExtensionType.WebDocumentViewer },
+    new StyleSheet { ExtensionType = ExtensionType.ReportDesigner }
+)
+    @Html.DevExpress().GetScripts(
+    new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+    //new Script { ExtensionSuite = ExtensionSuite.HtmlEditor },
+    //new Script { ExtensionSuite = ExtensionSuite.GridView },
+    //new Script { ExtensionSuite = ExtensionSuite.CardView },
+    new Script { ExtensionSuite = ExtensionSuite.PivotGrid },
+    //new Script { ExtensionSuite = ExtensionSuite.Editors },
+    new Script { ExtensionSuite = ExtensionSuite.Chart },
+    new Script { ExtensionSuite = ExtensionSuite.Report },
+    //new Script { ExtensionSuite = ExtensionSuite.Scheduler },
+    //new Script { ExtensionSuite = ExtensionSuite.TreeList },
+    //new Script { ExtensionSuite = ExtensionSuite.RichEdit },
+    //new Script { ExtensionSuite = ExtensionSuite.Spreadsheet },
+    //new Script { ExtensionSuite = ExtensionSuite.SpellChecker },
+    new Script { ExtensionType = ExtensionType.WebDocumentViewer },
+    new Script { ExtensionType = ExtensionType.ReportDesigner }
+)
+</head>
+
+<body>
+    @functions{
+        public string GetUrl(ReportModel itm)
+        {
+            string url = "";
+            if (itm.ReportType == REPORT_TYPE.OLD_REPORT)
+                url = "../Home/Index?strParam=" + itm.Key + "&strType=OLD";
+            else
+                url = "../Home/Index?strParam=" + itm.Name + "&strType=NEW";
+
+            return url;
+        }
+    }
+
+    @{
+        var Reports = ViewBag.Reports as Dictionary<string, ReportModel>;
+    }
+    <div class="content-wrapper">
+        <div class="header">
+            <h1>WebPOS Reports [ @ViewBag.ReportTitle ]</h1>
+            @Html.DevExpress().Menu(settings =>
+       {
+           settings.Name = "HeaderMenu";
+           settings.AllowSelectItem = true;
+           settings.EnableClientSideAPI = true;
+           settings.ItemAutoWidth = false;
+           settings.Width = System.Web.UI.WebControls.Unit.Percentage(100);
+           settings.Styles.Style.Border.BorderWidth = System.Web.UI.WebControls.Unit.Pixel(0);
+           settings.Styles.Style.Paddings.Padding = System.Web.UI.WebControls.Unit.Pixel(0);
+
+           if (ViewBag.DBVersion == 1)
+           {
+               //=======================
+               // OLD DATABASE SELECTED
+               //=======================
+
+               //settings.Items.Add( "Home" );
+
+               settings.Items.Add(item =>
+               {
+                   item.Text = "Καθημερινές Λειτουργίες";
+                   Dictionary<string, ReportModel> OD = @Reports.Where(x => x.Key.StartsWith("OD_")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                   foreach (var itm in OD)
+                   {
+                       item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                   }
+                   /*
+                                      item.Items.Add( subItem => { subItem.Text = "Αναφορά Αποδείξεων"; subItem.NavigateUrl = "../Home/Index?strParam=1i0b"; } );
+                                      item.Items.Add( subItem => { subItem.Text = "Πωλήσεις ανά Σερβιτόρο"; subItem.NavigateUrl = "../Home/Index?strParam=1i1b"; } );
+                                      //item.Items.Add( subItem => { subItem.Text = "Εισπράξεις ανά Σερβιτόρο"; subItem.NavigateUrl = "../Home/Index?strParam=1i2"; } );
+                                      //item.Items.Add( subItem => { subItem.Text = "Αναφορά Πωλήσεων Ημέρας"; subItem.ClientEnabled = false; } );
+                                      //item.Items.Add( subItem => { subItem.Text = "Vat Per Account"; subItem.ClientEnabled = false; } );
+                                      item.Items.Add( subItem => { subItem.Text = "Πωλήσεις ανά Τραπέζι"; subItem.NavigateUrl = "../Home/Index?strParam=1i6b"; } );
+                                      //item.Items.Add( subItem => { subItem.Text = "Ημερολόγιο Πωλήσεων (μόνο εκπτώσεις)"; subItem.ClientEnabled = false; } );*/
+               });
+
+               settings.Items.Add(item =>
+               {
+                   item.Text = "Αρχείο Συστήματος";
+                   Dictionary<string, ReportModel> OF = @Reports.Where(x => x.Key.StartsWith("OF_")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                   foreach (var itm in OF)
+                   {
+                       item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                   }
+                   /* item.Items.Add( subItem => { subItem.Text = "Αρχείο Ειδών"; subItem.NavigateUrl = "../Home/Index?strParam=4i0"; } );
+                    item.Items.Add( subItem => { subItem.Text = "Προϊόντα ανά Σελίδα"; subItem.NavigateUrl = "../Home/Index?strParam=4i1"; } );
+                    item.Items.Add( subItem => { subItem.Text = "Προϊόντα ανά Σελίδα και POS"; subItem.NavigateUrl = "../Home/Index?strParam=4i2"; } );*/
+               });
+
+               settings.Items.Add(item =>
+               {
+                   item.Text = "Πωλήσεις";
+                   //item.Items.Add( subItem => { subItem.Text = "Food & Beverage Statistics"; subItem.ClientEnabled = false; } );
+                   item.Items.Add(subItem =>
+                   {
+                       subItem.Text = "Best Seller...";
+                       Dictionary<string, ReportModel> OSB = @Reports.Where(x => x.Key.StartsWith("OSB")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                       foreach (var itm in OSB)
+                       {
+                           subItem.Items.Add(subItem2 => { subItem2.Text = itm.Value.Name; subItem2.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                       }
+                       /*
+                                              subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller Εσόδων ανά POS"; subItem2.NavigateUrl = "../Home/Index?strParam=2i01b"; } );
+                                              //subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller Εσόδων (Αύξουσα)"; subItem2.NavigateUrl = "../Home/Index?strParam=2i02"; } );
+                                              //subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller Εσόδων (Φθίνουσα)"; subItem2.NavigateUrl = "../Home/Index?strParam=2i03"; } );
+                                              subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller ανά Αξία"; subItem2.NavigateUrl = "../Home/Index?strParam=2i03b"; } );
+                                              //subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller ανά Ποσότητα (Αύξουσα)"; subItem2.NavigateUrl = "../Home/Index?strParam=2i04"; } );
+                                              //subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller ανά Ποσότητα (Φθίνουσα)"; subItem2.NavigateUrl = "../Home/Index?strParam=2i05"; } );
+                                              subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller ανά Ποσότητα"; subItem2.NavigateUrl = "../Home/Index?strParam=2i05b"; } );*/
+                   });
+                   Dictionary<string, ReportModel> OS_ = @Reports.Where(x => x.Key.StartsWith("OS_")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                   foreach (var itm in OS_)
+                   {
+                       item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                   }
+                   /*
+                   //item.Items.Add( subItem => { subItem.Text = "Best Seller Εσόδων ανά POS"; subItem.NavigateUrl = "../Home/Index?strParam=2i0"; } );
+                   //item.Items.Add( subItem => { subItem.Text = "Best Seller Εσόδων"; subItem.NavigateUrl = "../Home/Index?strParam=2i1"; } );
+                   item.Items.Add( subItem => { subItem.Text = "Πωλήσεις Ειδών ανά Χειριστή Συνοπτικά"; subItem.NavigateUrl = "../Home/Index?strParam=2i3b"; } );
+                   item.Items.Add( subItem => { subItem.Text = "Πωλήσεις Ειδών ανά Χειριστή Αναλυτικά"; subItem.NavigateUrl = "../Home/Index?strParam=2i4b"; } );
+                   item.Items.Add( subItem => { subItem.Text = "Πωλήσεις Ειδών ανά Τιμοκατάλογο"; subItem.NavigateUrl = "../Home/Index?strParam=2i5b"; } );
+                   //item.Items.Add( subItem => { subItem.Text = "Πωλήσεις Ειδών ανά Τιμοκατάλογο και POS"; subItem.NavigateUrl = "../Home/Index?strParam=2i5a"; } );
+                   item.Items.Add( subItem => { subItem.Text = "Πωλήσεις Ειδών ανά Κατηγορία"; subItem.NavigateUrl = "../Home/Index?strParam=2i6b"; } );
+                   item.Items.Add( subItem => { subItem.Text = "Πωλήσεις Ειδών ανά Κατηγορία και POS"; subItem.NavigateUrl = "../Home/Index?strParam=2i7b"; } );
+                   //item.Items.Add( subItem => { subItem.Text = "Κόστος Δικαιουμένων"; subItem.ClientEnabled = false; } );
+                   item.Items.Add( subItem => { subItem.Text = "Κόστος Πωληθέντων"; subItem.NavigateUrl = "../Home/Index?strParam=2i8b"; } );
+                   //item.Items.Add( subItem => { subItem.Text = "Κόστος Δικαιουμένων (AI)"; subItem.ClientEnabled = false; } );
+                   //item.Items.Add( subItem => { subItem.Text = "Best Seller (Grouped by Pos)"; subItem.ClientEnabled = false; } );
+                   //item.Items.Add( subItem => { subItem.Text = "Best Seller"; subItem.ClientEnabled = false; } );
+                   //item.Items.Add( subItem => { subItem.Text = "Ωριαίες Πωλήσεις Ειδών"; subItem.NavigateUrl = "../Home/Index?strParam=2i15"; } );
+                   //item.Items.Add( subItem => { subItem.Text = "Ωριαίες Πωλήσεις Αποδείξεων"; subItem.NavigateUrl = "../Home/Index?strParam=2i16o"; subItem.ClientEnabled = false; } );
+                   item.Items.Add( subItem => { subItem.Text = "Ωριαίες Πωλήσεις ανά Τύπο Παραστατικού Συνοπτικά"; subItem.NavigateUrl = "../Home/Index?strParam=2i17b"; } );*/
+               });
+
+               //settings.Items.Add( item =>
+               //{
+               //    item.Text = "Εκτύπωσεις Κλεισίματος";
+               //    item.Items.Add( subItem => { subItem.Text = "Εκτύπωση Κλεισίματος"; subItem.NavigateUrl = "../Home/Index?strParam=3i0"; } );
+               //    item.Items.Add( subItem => { subItem.Text = "Εκτύπωση Κλεισίματος Ανά Δωμάτιο"; subItem.NavigateUrl = "../Home/Index?strParam=3i1"; } );
+               //    //item.Items.Add( subItem => { subItem.Text = "Εκτύπωση Κλεισίματος Ανά Απόδειξη"; subItem.ClientEnabled = false; } );
+               //} );
+
+           }
+           else
+           {
+               //=======================
+               // NEW DATABASE selected
+               //=======================
+
+               //settings.Items.Add( "Home" );
+
+               settings.Items.Add(item =>
+               {
+                   item.Text = "Καθημερινές Λειτουργίες";
+                   Dictionary<string, ReportModel> ND = @Reports.Where(x => x.Key.StartsWith("ND_")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                   foreach (var itm in ND)
+                   {
+                       string url = GetUrl(itm.Value);
+
+                       //item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = "../Home/Index?strParam="+ itm.Key; });
+                       item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = url; });
+                   }
+                   /* item.Items.Add( subItem => { subItem.Text = @Reports["ND_1"]; subItem.NavigateUrl = "../Home/Index?strParam=ND_1"; } );//1i0
+                    item.Items.Add( subItem => { subItem.Text = "Πωλήσεις ανά Σερβιτόρο"; subItem.NavigateUrl = "../Home/Index?strParam=1i1"; } );
+                    //item.Items.Add( subItem => { subItem.Text = "Εισπράξεις ανά Σερβιτόρο"; subItem.NavigateUrl = "../Home/Index?strParam=1i2"; } );
+                    //item.Items.Add( subItem => { subItem.Text = "Αναφορά Πωλήσεων Ημέρας"; subItem.ClientEnabled = false; } );
+                    //item.Items.Add( subItem => { subItem.Text = "Vat Per Account"; subItem.ClientEnabled = false; } );
+                    item.Items.Add( subItem => { subItem.Text = "Ημερολόγιο Πωλήσεων"; subItem.NavigateUrl = "../Home/Index?strParam=1i5"; } );
+                    item.Items.Add( subItem => { subItem.Text = "Πωλήσεις ανά Τραπέζι"; subItem.NavigateUrl = "../Home/Index?strParam=1i6"; } );
+                    item.Items.Add(subItem => { subItem.Text = "Ημερολόγιο Πωλήσεων με σχόλιο είδους"; subItem.NavigateUrl = "../Home/Index?strParam=1i7"; });
+                    //item.Items.Add( subItem => { subItem.Text = "Ημερολόγιο Πωλήσεων (μόνο εκπτώσεις)"; subItem.ClientEnabled = false; } );*/
+               });
+
+               settings.Items.Add(item =>
+               {
+                   item.Text = "Αρχείο Συστήματος";
+                   Dictionary<string, ReportModel> NF = @Reports.Where(x => x.Key.StartsWith("NF_")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                   foreach (var itm in NF)
+                   {
+                       string url = GetUrl(itm.Value);
+                       //item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                       item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = url; });
+                   }
+
+                   /*  item.Items.Add( subItem => { subItem.Text = "Αρχείο Ειδών"; subItem.NavigateUrl = "../Home/Index?strParam=4i0"; } );
+                     item.Items.Add( subItem => { subItem.Text = "Προϊόντα ανά Σελίδα"; subItem.NavigateUrl = "../Home/Index?strParam=4i1"; } );
+                     item.Items.Add( subItem => { subItem.Text = "Προϊόντα ανά Σελίδα και POS"; subItem.NavigateUrl = "../Home/Index?strParam=4i2"; } );*/
+               });
+
+               settings.Items.Add(item =>
+               {
+                   item.Text = "Πωλήσεις";
+                   //item.Items.Add( subItem => { subItem.Text = "Food & Beverage Statistics"; subItem.ClientEnabled = false; } );
+
+                   item.Items.Add(subItem =>
+                   {
+                       subItem.Text = "Best Seller . . .";
+                       Dictionary<string, ReportModel> NSB = @Reports.Where(x => x.Key.StartsWith("NSB")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                       foreach (var itm in NSB)
+                       {
+                           string url = GetUrl(itm.Value);
+                           //subItem.Items.Add(subItem2 => { subItem2.Text = itm.Value.Name; subItem2.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                           subItem.Items.Add(subItem2 => { subItem2.Text = itm.Value.Name; subItem2.NavigateUrl = url; });
+                       }
+                       /*  subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller Εσόδων ανά POS"; subItem2.NavigateUrl = "../Home/Index?strParam=2i01"; } );
+                         //subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller Εσόδων (Αύξουσα)"; subItem2.NavigateUrl = "../Home/Index?strParam=2i02"; } );
+                         subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller ανά Αξία"; subItem2.NavigateUrl = "../Home/Index?strParam=2i03"; } );
+                         //subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller ανά Ποσότητα (Αύξουσα)"; subItem2.NavigateUrl = "../Home/Index?strParam=2i04"; } );
+                         subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller ανά Ποσότητα"; subItem2.NavigateUrl = "../Home/Index?strParam=2i05"; } );
+                         subItem.Items.Add( subItem2 => { subItem2.Text = "Best Seller Ποσότητας ανά Κατηγορία Είδους"; subItem2.NavigateUrl = "../Home/Index?strParam=2i06"; } );*/
+                   });
+
+                   item.Items.Add(subItem001 =>
+                   {
+                       subItem001.Text = "Ανά Δωμάτιο . . .";
+                       Dictionary<string, ReportModel> NSR = @Reports.Where(x => x.Key.StartsWith("NSR")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                       foreach (var itm in NSR)
+                       {
+                           string url = GetUrl(itm.Value);
+                           //subItem001.Items.Add(subItem002 => { subItem002.Text = itm.Value.Name; subItem002.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                           subItem001.Items.Add(subItem002 => { subItem002.Text = itm.Value.Name; subItem002.NavigateUrl = url; });
+                       }
+                       /* subItem001.Items.Add( subItem002 => { subItem002.Text = "Πωλήσεις Complimentary vs Room"; subItem002.NavigateUrl = "../Home/Index?strParam=2i2"; } );
+                        subItem001.Items.Add( subItem002 => { subItem002.Text = "Πωλήσεις Complimentary vs Room Area"; subItem002.NavigateUrl = "../Home/Index?strParam=2i12"; } );
+                        subItem001.Items.Add( subItem002 => { subItem002.Text = "Πωλήσεις ανά Δωμάτιο Συνοπτικά"; subItem002.NavigateUrl = "../Home/Index?strParam=2i20"; } );*/
+                   });
+
+                   item.Items.Add(subItem003 =>
+                   {
+                       subItem003.Text = "Ανά Χειριστή . . .";
+                       Dictionary<string, ReportModel> NSO = @Reports.Where(x => x.Key.StartsWith("NSO")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                       foreach (var itm in NSO)
+                       {
+                           string url = GetUrl(itm.Value);
+                           //subItem003.Items.Add(subItem004 => { subItem004.Text = itm.Value.Name; subItem004.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                           subItem003.Items.Add(subItem004 => { subItem004.Text = itm.Value.Name; subItem004.NavigateUrl = url; });
+                       }
+                       /*  subItem003.Items.Add( subItem004 => { subItem004.Text = "Πωλήσεις Ειδών ανά Χειριστή - Συνοπτικά"; subItem004.NavigateUrl = "../Home/Index?strParam=2i3"; } );
+                         subItem003.Items.Add( subItem004 => { subItem004.Text = "Πωλήσεις Ειδών ανά Χειριστή και POS - Συνοπτικά"; subItem004.NavigateUrl = "../Home/Index?strParam=2i3a"; } );
+                         subItem003.Items.Add( subItem004 => { subItem004.Text = "Πωλήσεις ανά Χειριστή και Τρόπο Πληρωμής - Συνοπτικά"; subItem004.NavigateUrl = "../Home/Index?strParam=2i3ab"; } );
+                         subItem003.Items.Add( subItem004 => { subItem004.Text = "Πωλήσεις Ειδών ανά Χειριστή - Αναλυτικά"; subItem004.NavigateUrl = "../Home/Index?strParam=2i4"; } );
+                         subItem003.Items.Add( subItem004 => { subItem004.Text = "Πωλήσεις Ειδών ανά Χειριστή και POS - Αναλυτικά"; subItem004.NavigateUrl = "../Home/Index?strParam=2i4a"; } );
+                         subItem003.Items.Add( subItem004 => { subItem004.Text = "Πωλήσεις Ειδών ανά Χειριστή POS και Τιμοκατάλογο - Αναλυτικά"; subItem004.NavigateUrl = "../Home/Index?strParam=2i4ab"; } );
+                         subItem003.Items.Add( subItem004 => { subItem004.Text = "Πωλήσεις ανά Χειριστή, Τιμοκατάλογο και Κατηγορία - Συνοπτικά"; subItem004.NavigateUrl = "../Home/Index?strParam=2i4c"; } );
+                         subItem003.Items.Add( subItem004 => { subItem004.Text = "Πωλήσεις ανά Χειριστή, Τιμοκατάλογο και Κατηγορία Προϊόντων - Συνοπτικά"; subItem004.NavigateUrl = "../Home/Index?strParam=2i4d"; } );
+                         subItem003.Items.Add( subItem004 => { subItem004.Text = "Δελτία Παραγγελίας ανά Χειριστή - Αναλυτικά"; subItem004.NavigateUrl = "../Home/Index?strParam=2i4e"; } );*/
+                   });
+
+                   item.Items.Add(subItem005 =>
+                   {
+                       subItem005.Text = "Ανά Τιμοκατάλογο . . .";
+                       Dictionary<string, ReportModel> NSP = @Reports.Where(x => x.Key.StartsWith("NSP")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                       foreach (var itm in NSP)
+                       {
+                           string url = GetUrl(itm.Value);
+                           //subItem005.Items.Add(subItem006 => { subItem006.Text = itm.Value.Name; subItem006.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                           subItem005.Items.Add(subItem006 => { subItem006.Text = itm.Value.Name; subItem006.NavigateUrl = url; });
+                       }
+
+
+                       /*  subItem005.Items.Add( subItem006 => { subItem006.Text = "Πωλήσεις ανά Τιμοκατάλογο και Άτομα - Συνοπτικά"; subItem006.NavigateUrl = "../Home/Index?strParam=2i3abc"; } );
+                         subItem005.Items.Add( subItem006 => { subItem006.Text = "Πωλήσεις Ειδών ανά Τιμοκατάλογο"; subItem006.NavigateUrl = "../Home/Index?strParam=2i5"; } );
+                         subItem005.Items.Add( subItem006 => { subItem006.Text = "Πωλήσεις Ειδών ανά Τιμοκατάλογο και POS"; subItem006.NavigateUrl = "../Home/Index?strParam=2i5a"; } );
+                         subItem005.Items.Add( subItem006 => { subItem006.Text = "Πωλήσεις Ειδών ανά Τιμοκατάλογο POS και Κατηγορία"; subItem006.NavigateUrl = "../Home/Index?strParam=2i5ab"; } );*/
+                   });
+
+                   item.Items.Add(subItem007 =>
+                   {
+                       subItem007.Text = "Ανά Κατηγορία . . .";
+
+                       Dictionary<string, ReportModel> NSC = @Reports.Where(x => x.Key.StartsWith("NSC")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                       foreach (var itm in NSC)
+                       {
+                           string url = GetUrl(itm.Value);
+                           //subItem007.Items.Add(subItem008 => { subItem008.Text = itm.Value.Name; subItem008.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                           subItem007.Items.Add(subItem008 => { subItem008.Text = itm.Value.Name; subItem008.NavigateUrl = url; });
+                       }
+
+                       /*  subItem007.Items.Add( subItem008 => { subItem008.Text = "Πωλήσεις Ειδών ανά Κατηγορία"; subItem008.NavigateUrl = "../Home/Index?strParam=2i6aa"; } );
+                         subItem007.Items.Add( subItem008 => { subItem008.Text = "Πωλήσεις Ειδών ανά Κατηγορία και POS"; subItem008.NavigateUrl = "../Home/Index?strParam=2i6ab"; } );
+                         subItem007.Items.Add( subItem008 => { subItem008.Text = "Πωλήσεις Ειδών ανά Κατηγορία και POS - Συνοπτικά"; subItem008.NavigateUrl = "../Home/Index?strParam=2i6ac"; } );*/
+                   });
+
+                   item.Items.Add(subItem009 =>
+                   {
+                       subItem009.Text = "FLAT . . .";
+                       Dictionary<string, ReportModel> NSF = @Reports.Where(x => x.Key.StartsWith("NSF")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                       foreach (var itm in NSF)
+                       {
+                           string url = GetUrl(itm.Value);
+                           //subItem009.Items.Add(subItem010 => { subItem010.Text = itm.Value.Name; subItem010.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                           subItem009.Items.Add(subItem010 => { subItem010.Text = itm.Value.Name; subItem010.NavigateUrl = url; });
+                       }
+
+                       /*subItem009.Items.Add( subItem010 => { subItem010.Text = "Πωλήσεις ανά Είδος (flat)"; subItem010.NavigateUrl = "../Home/Index?strParam=2i18"; } );
+                       subItem009.Items.Add( subItem010 => { subItem010.Text = "Πωλήσεις ανά Τιμοκατάλογο, Είδος και ΦΠΑ (flat)"; subItem010.NavigateUrl = "../Home/Index?strParam=2i19"; } );*/
+                   });
+
+
+                   Dictionary<string, ReportModel> NS = @Reports.Where(x => x.Key.StartsWith("NS_")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                   foreach (var itm in NS)
+                   {
+                       string url = GetUrl(itm.Value);
+                       //item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                       item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = url; });
+                   }
+                   /*
+                                      //item.Items.Add( subItem => { subItem.Text = "Κόστος Δικαιουμένων"; subItem.ClientEnabled = false; } );
+                                      item.Items.Add( subItem => { subItem.Text = "Κόστος Πωληθέντων"; subItem.NavigateUrl = "../Home/Index?strParam=2i8"; } );
+                                      //item.Items.Add( subItem => { subItem.Text = "Κόστος Πωληθέντων (maison)"; subItem.NavigateUrl = "../Home/Index?strParam=2i9"; } );
+                                      //item.Items.Add( subItem => { subItem.Text = "Κόστος Πωληθέντων (AI)"; subItem.NavigateUrl = "../Home/Index?strParam=2i10"; } );
+                                      item.Items.Add( subItem => { subItem.Text = "Καθαρές Αξίες Πωλήσεων"; subItem.NavigateUrl = "../Home/Index?strParam=2i11"; } );
+                                      //item.Items.Add( subItem => { subItem.Text = "Κόστος Δικαιουμένων (AI)"; subItem.ClientEnabled = false; } );
+                                      //item.Items.Add( subItem => { subItem.Text = "Best Seller (Grouped by Pos)"; subItem.ClientEnabled = false; } );
+                                      //item.Items.Add( subItem => { subItem.Text = "Best Seller"; subItem.ClientEnabled = false; } );
+                                      item.Items.Add( subItem => { subItem.Text = "Ωριαίες Πωλήσεις Ειδών"; subItem.NavigateUrl = "../Home/Index?strParam=2i15"; } );
+                                      item.Items.Add( subItem => { subItem.Text = "Food & Beverage Statistics"; subItem.NavigateUrl = "../Home/Index?strParam=2i16"; } );
+                                      item.Items.Add( subItem => { subItem.Text = "Πωλήσεις ανά Τραπέζι - Αναλυτικά"; subItem.NavigateUrl = "../Home/Index?strParam=2i21"; } );
+                                      item.Items.Add( subItem => { subItem.Text = "Πωλήσεις ανά Buzzer - Αναλυτικά"; subItem.NavigateUrl = "../Home/Index?strParam=2i22"; } );*/
+               });
+
+               settings.Items.Add(item =>
+               {
+                   item.Text = "Εκτύπωσεις Κλεισίματος";
+                   Dictionary<string, ReportModel> NP = @Reports.Where(x => x.Key.StartsWith("NP_")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                   foreach (var itm in NP)
+                   {
+                       string url = GetUrl(itm.Value);
+                       //item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                       item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = url; });
+                   }
+
+                   /*
+                                      item.Items.Add( subItem => { subItem.Text = "Εκτύπωση Κλεισίματος"; subItem.NavigateUrl = "../Home/Index?strParam=3i0"; } );
+                                      item.Items.Add( subItem => { subItem.Text = "Εκτύπωση Κλεισίματος Ανά Δωμάτιο"; subItem.NavigateUrl = "../Home/Index?strParam=3i1"; } );
+                                      //item.Items.Add( subItem => { subItem.Text = "Εκτύπωση Κλεισίματος Ανά Απόδειξη"; subItem.ClientEnabled = false; } );*/
+               });
+
+               settings.Items.Add(item =>
+               {
+                   item.Text = "Simply Burgers";
+                   Dictionary<string, ReportModel> NB = @Reports.Where(x => x.Key.StartsWith("NB_")).ToDictionary(dict => dict.Key, dict => dict.Value);
+                   foreach (var itm in NB)
+                   {
+                       string url = GetUrl(itm.Value);
+                       //item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = "../Home/Index?strParam=" + itm.Key; });
+                       item.Items.Add(subItem => { subItem.Text = itm.Value.Name; subItem.NavigateUrl = url; });
+                   }
+
+                   /*
+                                      item.Items.Add( subItem => { subItem.Text = "Εκτύπωση Κλεισίματος"; subItem.NavigateUrl = "../Home/Index?strParam=3i0"; } );
+                                      item.Items.Add( subItem => { subItem.Text = "Εκτύπωση Κλεισίματος Ανά Δωμάτιο"; subItem.NavigateUrl = "../Home/Index?strParam=3i1"; } );
+                                      //item.Items.Add( subItem => { subItem.Text = "Εκτύπωση Κλεισίματος Ανά Απόδειξη"; subItem.ClientEnabled = false; } );*/
+               });
+
+               //test
+               //gboas
+               //test
+               settings.Items.Add(item =>
+               {
+                   item.Text = "Σχεδίαση";
+                   item.Items.Add(subItem => { subItem.Text = "Νέες Εκτυπώσεις"; subItem.NavigateUrl = "../Home/Index?strParam=" + "NewReport"; });
+               });
+
+
+
+
+
+           }
+
+           //settings.ClientSideEvents.ItemClick = "function( s, e )"
+           //                                    + "   {"
+           //                                    + "   window.location.href = '../Home/Index?strParam=' + s.selectedItemIndexPath"
+           //                                    + "   }";
+
+       }).GetHtml()
+        </div>
+
+        <div class="content">
+            @RenderBody()
+        </div>
+
+        <div class="footer">
+            <p>Copyright &copy; @DateTime.Now.Year - HIT S.A. - @ViewBag.ApplicationVersion </p>
+        </div>
+    </div>
+</body>
+</html>

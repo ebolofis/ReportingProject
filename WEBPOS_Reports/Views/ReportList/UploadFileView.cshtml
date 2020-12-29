@@ -1,0 +1,62 @@
+﻿@model WEBPOS_Reports.Models.FileModel
+
+
+<div class="bs-example marginTop50" data-example-id="table-within-panel">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>Αποστολή Εκτύπωσης</h3>
+        </div>
+        <div class="panel-body">
+
+
+            @using (Html.BeginForm("UploadFile", "ReportList", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.ValidationSummary(true)
+
+                <div>       
+                    <table>
+                        <tr>
+                            <td>
+                                @Html.TextBoxFor(x => x.File, new { type = "file", accept = ".posrpt" })
+                                
+                                @Html.ValidationMessageFor(x => x.File, String.Empty, new { @style = "color:red;!important" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.Label("Όνομα εκτύπωσης") @Html.TextBox("Url")
+                                <br/>
+                                @Html.ValidationMessageFor(x => x.Url, String.Empty, new { @style = "color:red;!important" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button type="button" onclick="window.location.href = '/ReportList';">Επιστροφή</button>
+                                <button type="submit">Αποστολή</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br/>                
+                
+            }
+
+        </div>
+    </div>
+</div>

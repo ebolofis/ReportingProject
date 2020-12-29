@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEBPOS_Reports", "WEBPOS_Reports\WEBPOS_Reports.csproj", "{7759C995-5E0F-402E-8283-D8061687DD42}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL Queries", "SQL Queries", "{2EA21431-42B7-47E8-8812-CA9577537304}"
+	ProjectSection(SolutionItems) = preProject
+		SQL Queries\__1.sql = SQL Queries\__1.sql
+		SQL Queries\__2.sql = SQL Queries\__2.sql
+		SQL Queries\Select Totals For BestSellerQty.sql = SQL Queries\Select Totals For BestSellerQty.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lookups", "Lookups", "{DDCA9920-A185-4F16-A98E-8BA2AE6FBCFD}"
+	ProjectSection(SolutionItems) = preProject
+		SQL Queries\Lookups\Accounts.sql = SQL Queries\Lookups\Accounts.sql
+		SQL Queries\Lookups\Categories.sql = SQL Queries\Lookups\Categories.sql
+		SQL Queries\Lookups\Departments.sql = SQL Queries\Lookups\Departments.sql
+		SQL Queries\Lookups\HourOfDay.sql = SQL Queries\Lookups\HourOfDay.sql
+		SQL Queries\Lookups\InvoiceTypes.sql = SQL Queries\Lookups\InvoiceTypes.sql
+		SQL Queries\Lookups\InvoiceTypes2.sql = SQL Queries\Lookups\InvoiceTypes2.sql
+		SQL Queries\Lookups\PosInfo.sql = SQL Queries\Lookups\PosInfo.sql
+		SQL Queries\Lookups\Pricelist.sql = SQL Queries\Lookups\Pricelist.sql
+		SQL Queries\Lookups\ProductCategories.sql = SQL Queries\Lookups\ProductCategories.sql
+		SQL Queries\Lookups\ProductCategories2.sql = SQL Queries\Lookups\ProductCategories2.sql
+		SQL Queries\Lookups\Staff.sql = SQL Queries\Lookups\Staff.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TmpQueries", "TmpQueries", "{EB373769-1856-4619-9F56-75AD2FB06FA1}"
+	ProjectSection(SolutionItems) = preProject
+		SQL Queries\TmpQueries\Complimentary vs Room Area - New DB.sql = SQL Queries\TmpQueries\Complimentary vs Room Area - New DB.sql
+		SQL Queries\Find_Fields_Within_DB.sql = SQL Queries\Find_Fields_Within_DB.sql
+		SQL Queries\TmpQueries\Hourly Product Sales - New DB - 001.sql = SQL Queries\TmpQueries\Hourly Product Sales - New DB - 001.sql
+		SQL Queries\TmpQueries\Hourly Product Sales - New DB - 002.sql = SQL Queries\TmpQueries\Hourly Product Sales - New DB - 002.sql
+		SQL Queries\TmpQueries\Invoices Total - New DB.sql = SQL Queries\TmpQueries\Invoices Total - New DB.sql
+		SQL Queries\TmpQueries\Lookups.sql = SQL Queries\TmpQueries\Lookups.sql
+		SQL Queries\TmpQueries\Pricelists.sql = SQL Queries\TmpQueries\Pricelists.sql
+		SQL Queries\TmpQueries\Receipts - New DB.sql = SQL Queries\TmpQueries\Receipts - New DB.sql
+		SQL Queries\TmpQueries\Sales Cost - New DB.sql = SQL Queries\TmpQueries\Sales Cost - New DB.sql
+		SQL Queries\TmpQueries\Sales Cost AL - New DB - 001.sql = SQL Queries\TmpQueries\Sales Cost AL - New DB - 001.sql
+		SQL Queries\TmpQueries\Sales Cost AL - New DB - 002.sql = SQL Queries\TmpQueries\Sales Cost AL - New DB - 002.sql
+		SQL Queries\TmpQueries\Sales Cost Maison - New DB.sql = SQL Queries\TmpQueries\Sales Cost Maison - New DB.sql
+		SQL Queries\TmpQueries\Sales per Category and POS - New DB.sql = SQL Queries\TmpQueries\Sales per Category and POS - New DB.sql
+		SQL Queries\TmpQueries\Sales per Payment Total - New DB.sql = SQL Queries\TmpQueries\Sales per Payment Total - New DB.sql
+		SQL Queries\TmpQueries\Sales per POS Pricelist and Category - New DB.sql = SQL Queries\TmpQueries\Sales per POS Pricelist and Category - New DB.sql
+		SQL Queries\TmpQueries\Sales per Pricelist and POS - New DB.sql = SQL Queries\TmpQueries\Sales per Pricelist and POS - New DB.sql
+		Sales per Staff POS and Pricelist.sql = Sales per Staff POS and Pricelist.sql
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{516B4BB5-1C9A-46D0-B4B1-D3290D41E057}"
+	ProjectSection(SolutionItems) = preProject
+		TODO_List.txt = TODO_List.txt
+		Version_Changes.txt = Version_Changes.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7759C995-5E0F-402E-8283-D8061687DD42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7759C995-5E0F-402E-8283-D8061687DD42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7759C995-5E0F-402E-8283-D8061687DD42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7759C995-5E0F-402E-8283-D8061687DD42}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DDCA9920-A185-4F16-A98E-8BA2AE6FBCFD} = {2EA21431-42B7-47E8-8812-CA9577537304}
+		{EB373769-1856-4619-9F56-75AD2FB06FA1} = {2EA21431-42B7-47E8-8812-CA9577537304}
+	EndGlobalSection
+EndGlobal

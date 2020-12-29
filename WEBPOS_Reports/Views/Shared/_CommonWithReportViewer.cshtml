@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Web POS Reports</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+    @Html.DevExpress().GetStyleSheets(
+    new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.PivotGrid },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Chart },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Report },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Spreadsheet },
+    new StyleSheet { ExtensionType = ExtensionType.ReportDesigner }
+)
+    @Html.DevExpress().GetScripts(
+    new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+    new Script { ExtensionSuite = ExtensionSuite.PivotGrid },
+    new Script { ExtensionSuite = ExtensionSuite.Chart },
+    new Script { ExtensionSuite = ExtensionSuite.Report },
+    new Script { ExtensionSuite = ExtensionSuite.Spreadsheet },
+    new Script { ExtensionType = ExtensionType.ReportDesigner }
+)
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <div class="header">
+            <h1>WebPOS Reports</h1>
+
+        </div>
+
+        <div class="content">
+            @model DevExpress.XtraReports.UI.XtraReport
+            @Html.DevExpress().WebDocumentViewer( settings =>
+       {
+           settings.Name = "documentViewer";
+       } ).Bind( Model ).GetHtml()
+
+
+            @RenderBody()
+        </div>
+
+        <div class="footer">
+            <p>Copyright &copy; @DateTime.Now.Year - HIT S.A. </p>
+        </div>
+    </div>
+</body>
+</html>
